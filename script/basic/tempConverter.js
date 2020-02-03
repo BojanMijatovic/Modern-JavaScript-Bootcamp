@@ -12,5 +12,3 @@ console.log(celsius);
 
 let kelvin = (fahrenheit + 459.67) * 5 / 9;
 console.log(kelvin);
-
-// T(K) = (60°F + 459.67)× 5/9 = 288.71 K
