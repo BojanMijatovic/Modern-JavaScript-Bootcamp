@@ -67,14 +67,29 @@ Operator: var1 % var2
 
 */
 
-let num = 2 ** 4;
-let num1 = 3 ** 2;
+// let num = 2 ** 4;
+// let num1 = 3 ** 2;
 
-console.log(num);
-console.log(num1);
+// console.log(num);
+// console.log(num1);
 
-let test = 0 + 0; // NaN
+//let test = 0 + 0; // NaN
 //   1 + 'test' // NaN
 
 // NaN + 5 = NaN
-console.log(typeof (NaN)); // Number  :)
+// console.log(typeof (NaN)); // Number  :)
+
+
+let num = 1;
+
+num += 1;
+// console.log(num);  // num = 2
+
+let bonus = 5;
+
+num *= bonus; // num = 10
+
+let counter = 1;
+
+counter++;
+// console.log(counter); counter 2
