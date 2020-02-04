@@ -37,25 +37,30 @@ let amountStatus = 10;
 
 
 
+
 let x = 3;
 let y = -4;
 let z = x - y;
-if (x + y > 0) {
-  console.log('Add sum');
-} else if (z > 0) {
-  console.log('Return 0');
-}
+
+
+// if (x + y > 0) {
+//   console.log('Add sum');
+// } else if (z > 0) {
+//   console.log('Return 0');
+// }
+
+
+// if (x * z > 15 && y < 0) {
+//   console.log('This is true');
+// } else if (x * z > 15 || y > 0) {
+//   console.log('Greater from 0');
+// }
 
 
 
-if (x * z > 15 && y < 0) {
-  console.log('This is true');
-} else if (x * z > 15 || y > 0) {
-  console.log('Greater from 0');
-}
-
-
-
+let a = 14;
+let b = 22;
+let c = 4;
 
 
 
