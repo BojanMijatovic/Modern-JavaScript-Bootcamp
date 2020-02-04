@@ -27,25 +27,32 @@ let temp = 65;
 let isAccountLocked = false;
 let amountStatus = 10;
 
-if (isAccountLocked === true) {
-  console.log('Sorry your account is locked');
-} else if (isAccountLocked === false && amountStatus >= 0) {
-  console.log('Welcome to your Account you have on account ' + amountStatus + '$');
-} else {
-  console.log('Welcome to app');
+// if (isAccountLocked === true) {
+//   console.log('Sorry your account is locked');
+// } else if (isAccountLocked === false && amountStatus >= 0) {
+//   console.log('Welcome to your Account you have on account ' + amountStatus + '$');
+// } else {
+//   console.log('Welcome to app');
+// }
+
+
+
+let x = 3;
+let y = -4;
+let z = x - y;
+if (x + y > 0) {
+  console.log('Add sum');
+} else if (z > 0) {
+  console.log('Return 0');
 }
 
 
 
-
-
-
-
-
-
-
-
-
+if (x * z > 15 && y < 0) {
+  console.log('This is true');
+} else if (x * z > 15 || y > 0) {
+  console.log('Greater from 0');
+}
 
 
 
