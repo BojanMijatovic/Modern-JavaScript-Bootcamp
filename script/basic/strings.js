@@ -36,3 +36,23 @@ let firstChar = firstName[0];
 let msg = 'Here is first chat';
 
 // console.log(msg.toUpperCase()); HERE IS FIRST CHAT
+
+let freeSpace = 'Colors         ';
+console.log(freeSpace.length);
+
+let test = freeSpace.trim();
+
+console.log(freeSpace.trim().toUpperCase().length);
+// console.log(test.length);
+
+let sport = 'BasketBall';
+
+let findSport = sport.toLowerCase().indexOf('bfall');
+
+if (findSport >= 0) {
+  let test = sport.slice(findSport);
+  console.log(test);
+
+} else {
+  console.log('Not that word');
+}
