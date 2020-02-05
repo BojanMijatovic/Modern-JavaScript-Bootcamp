@@ -21,5 +21,18 @@ let searchName = name.toLowerCase().indexOf('b');
 if (searchName >= 0) {
   let newName = name.replace('Bojan', 'Js');
   let newLast = lastName.slice(9);
-  console.log('New name is ' + newName + ' and last name is ' + newLast);
+  // console.log('New name is ' + newName + ' and last name is ' + newLast);
+}
+
+let a = 'Soccer is best sport';
+
+let b = 'Basket is best sport';
+
+let test = a.trim().toLowerCase().indexOf('s');
+
+if (test >= 0) {
+  let c = b.replace('Basket', 'Airsoft');
+  console.log(c);
+} else {
+  console.log(a);
 }
