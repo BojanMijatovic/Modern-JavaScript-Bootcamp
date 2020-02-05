@@ -52,6 +52,9 @@ if (test.indexOf('Colors')) {
   console.log('That is not that word');
 }
 
+// let rest = '5' + '4';
+
+// console.log(rest);
 
 
 
