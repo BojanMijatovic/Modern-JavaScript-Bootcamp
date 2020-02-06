@@ -94,9 +94,30 @@ let counter = 1;
 counter++;
 // console.log(counter); counter 2
 
-let a = Math.round(Math.random() * 10) + 1;
+// let a = Math.round(Math.random() * 10) + 1;
 
-let age = '2+1' + 11;
-let insert = `Please insert your age ${age}`;
+// let age = '2+1' + 11;
+// let insert = `Please insert your age ${age}`;
 
-console.log(parseInt(age));
+// console.log(parseInt(age));
+
+
+// let a = 12;
+// if (a <= 15) {
+//   a = 20
+//   console.log(a++);
+// }
+
+// console.log(a);
+
+// console.log(null == 0);  false
+
+// let z = 12 !== '12';
+// let q = 1 !== 1;
+
+// console.log(z);
+
+// console.log(q);
+
+
+// console.log(`What if I do this ${1 == 1}`);
