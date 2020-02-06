@@ -93,3 +93,10 @@ let counter = 1;
 
 counter++;
 // console.log(counter); counter 2
+
+let a = Math.round(Math.random() * 10) + 1;
+
+let age = '2+1' + 11;
+let insert = `Please insert your age ${age}`;
+
+console.log(parseInt(age));
