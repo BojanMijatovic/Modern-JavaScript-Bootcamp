@@ -2,8 +2,8 @@
 
 //  Challenge area
 
-let isGestOneVegan = false;
-let isGestTwoVegan = false;
+// let isGestOneVegan = false;
+// let isGestTwoVegan = false;
 
 // if (isGestOneVegan && isGestTwoVegan) {
 //   console.log('Are you both vegans? We can offer vegan dishes');
@@ -14,7 +14,7 @@ let isGestTwoVegan = false;
 // }
 
 
-let temp = 65;
+// let temp = 65;
 
 // if (temp > 0 && temp < 25) {
 //   console.log('Weather is great');
@@ -38,9 +38,9 @@ let amountStatus = 10;
 
 
 
-let x = 3;
-let y = -4;
-let z = x - y;
+// let x = 3;
+// let y = -4;
+// let z = x - y;
 
 
 // if (x + y > 0) {
@@ -58,11 +58,9 @@ let z = x - y;
 
 
 
-let a = 14;
-let b = 22;
-let c = 4;
-
-
-
-
-
+let num = Math.round(Math.random() * 9 + 1);
+if (num >= 4 && num <= 8) {
+  console.log('Great num');
+} else {
+  console.log(`Num ${num} is small or high`);
+}
