@@ -85,12 +85,10 @@ if (insects.includes('butterfly')) {
 }
 // console.log(newLotos);
 
-
 // The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements
 const months = ['Jan', 'March', 'April', 'June'];
 
 // let newMonth = months.splice(1, 0, 'February'); // add month february
-
 
 let summer = months.splice(2, 2);
 // console.log(summer);
@@ -98,3 +96,4 @@ let summer = months.splice(2, 2);
 
 let addWinterMonths = months.splice(1, 0, 'february'.toUpperCase()); // add month february to Upper Case ()
 // console.log(months);
+
