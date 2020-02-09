@@ -56,13 +56,31 @@ let a = cars.includes('volvo');
 // includes
 const beasts = ['butterfly', 'ant', 'bison', 'camel', 'duck', 'bison'];
 
-if (beasts.includes('ant')) {
-  console.log(`You have a ant`);
-}
+// if (beasts.includes('ant')) {
+//   console.log(`You have a ant`);
+// }
 
 //  index Off
 
-if (beasts.length >= 4) {
-  let test = beasts.indexOf('ant');
-  console.log(test);
+// if (beasts.length >= 4) {
+//   let test = beasts.indexOf('ant');
+//   console.log(test);
+// }
+
+const array1 = ['one', 'two', 'three'];
+// console.log(array1.reverse()); // reverse array
+
+//The join() method creates and returns a new string by concatenating all of the elements in an array
+// console.log(array1.join('-'));
+
+
+//  Slice array
+// The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified.
+
+let newLotos = lottoNums.slice(0, 4);
+
+const insects = beasts.slice(0, 1);
+if (insects.includes('butterfly')) {
+  console.log(insects);
 }
+console.log(newLotos);
