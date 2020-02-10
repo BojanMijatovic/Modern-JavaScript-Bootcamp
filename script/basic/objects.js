@@ -97,3 +97,35 @@ if (car.name.includes('F')) {
   car.name = 'Ford';
 }
 console.log(car);
+
+
+const products = [];
+//  Add new Object to empty arr
+let addProduct = products.push({
+  name: 'fuel/oil',
+  price: 30
+})
+
+if (products.length > 0) {
+  console.log(products);
+}
+
+//  Obj Person
+const person = {
+  name: undefined,
+  lastName: undefined,
+  age: 0,
+  gender: undefined,
+}
+
+person.name = 'Kyle';
+person.lastName = 'Simpson';
+person.age = 37;
+person.gender = 'male';
+
+if (!person.job) {
+  person.job = 'JS expert';
+  person.work = 'Teaching Js'
+}
+
+console.log(person);
