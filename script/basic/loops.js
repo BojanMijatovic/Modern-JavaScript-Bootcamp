@@ -32,3 +32,49 @@ for (let i = 0; i <= 20; i++) {
     // console.log(i);
   }
 }
+
+
+//  For loops with arrays
+const animals = ['lions', 'bugs', 'cats', 'panther'];
+
+//  Task num 5
+for (let i = 0; i < animals.length; i++) {
+  // console.log(animals[i]);
+}
+
+//  Loop with arrays and obj
+const shopCart = [
+  {
+    nameProduct: 'player',
+    price: 300,
+    quantity: 1
+  },
+  {
+    nameProduct: 'T-Shirt',
+    price: 35,
+    quantity: 3
+  },
+  {
+    nameProduct: 'shoes',
+    price: 100,
+    quantity: 1
+  }
+]
+
+//  Sum all products 
+let sum = 0;
+for (let i = 0; i < shopCart.length; i++) {
+  sum += shopCart[i].price;
+}
+// console.log(sum / shopCart.length);
+
+
+
+
+//  Reverse array
+const word = '123456789';
+
+for (let i = word.length - 1; i >= 0; i--) {
+  let reverse = word[i];
+  // console.log(reverse);
+}
