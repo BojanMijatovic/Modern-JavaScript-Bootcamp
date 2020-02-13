@@ -68,13 +68,40 @@ for (let i = 0; i < shopCart.length; i++) {
 }
 // console.log(sum / shopCart.length);
 
-
-
-
 //  Reverse array
 const word = '123456789';
 
 for (let i = word.length - 1; i >= 0; i--) {
   let reverse = word[i];
   // console.log(reverse);
+}
+
+//  inner and outer loop
+for (let i = 1; i <= 10; i++) {
+  // console.log('Loop ' + i);
+  for (let j = 10; j > 0; j--) {
+    // console.log('Inner loop ' + j);
+  }
+}
+
+
+// const gameBoard = [
+//   [4, 8, 32, 2],
+//   [6, 14, 10, 22],
+//   [24, 12, 4, 14],
+//   [6, 26, 18, 2]
+// ]
+
+// for (let i = 0; i < gameBoard.length; i++) {
+//   let gameRow = gameBoard[i];
+//   for (let j = 0; j < gameRow.length; j++) {
+//     console.log(`J is ${gameRow[j]}`);
+//   }
+// }
+
+
+const nums = [1, 3, 4, 5, 6, 7, 8, 9];
+
+for (let num of nums) {
+  console.log(num);
 }
