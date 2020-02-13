@@ -61,6 +61,7 @@ const shopCart = [
   }
 ]
 
+
 //  Sum all products 
 let sum = 0;
 for (let i = 0; i < shopCart.length; i++) {
@@ -100,8 +101,50 @@ for (let i = 1; i <= 10; i++) {
 // }
 
 
-const nums = [1, 3, 4, 5, 6, 7, 8, 9];
+// const nums = [1, 3, 4, 5, 6, 7, 8, 9];
 
-for (let num of nums) {
-  console.log(num);
-}
+// for (let num of nums) {
+//   console.log(num);
+// }
+
+
+//  For off loop
+// const person = {
+//   name: 'Jon',
+//   lastName: 'Doe',
+//   age: 32,
+//   city: 'Ns'
+// }
+
+// for (const info of Object.keys(person)) {
+//   console.log(info);
+// }
+
+// const nums = [1, 2, 3, 4, 5, 6, 666, 7, 8, 9];
+// const test = [2, 7, 9, 9, 7, 2, 21];
+
+// if (nums.length > test.length) {
+//   console.log(`Nums are bigger arr with ${nums.length} and difference is ${nums.length - test.length} points`);
+// } else if (test.length > nums.length) {
+//   console.log(`test are bigger arr with ${test.length}  and difference is ${nums.length - test.length} points`);
+// } else {
+//   console.log(`They are equals`);
+// }
+
+// for (let num of nums) {
+//   if (num === 6) {
+//     console.log(`Your num is ${num}`);
+//     break;
+//   }
+//   console.log(num);
+// }
+
+
+//  Task 09
+// for (const num of nums) {
+//   if (num === 5) {
+//     console.log(`Num is ${num}`);
+//     break;
+//   }
+// }
+
