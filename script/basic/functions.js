@@ -35,4 +35,42 @@ function addName(name, lastName) {
   console.log(`Hello ${i} ${last}`);
 }
 
-addName('John', 'DOe');
+// addName('John', 'DOe');
+
+
+function checkUserName(name, lastName) {
+  if (!name) {
+    console.log('Please insert name ');
+  } else if (!lastName) {
+    console.log(`Please insert last Name`);
+  }
+}
+
+// checkUserName(null, 'T')
+
+function password(userPassword, name) {
+  if (userPassword.length <= 6) {
+    console.log(`Please ${name} insert more characters in your password`);
+  } else {
+    console.log(`Welcome ${name}`);
+  }
+}
+
+// password('test21321', 'Alex');
+
+function isBlue(color) {
+  if (color.toLowerCase() !== 'blue') {
+    console.log(`Please insert blue color`);
+    return false;
+  }
+}
+// isBlue('BLue');
+
+
+function isValidPassword(password, userName) {
+  if (password.length < 8 || password.includes(userName.toLowerCase()) || password.includes(' ')) {
+    return console.log('Invalid password');
+  } console.log(`Welcome ${userName}`);
+}
+
+// isValidPassword('testj2s', 'Jane');
