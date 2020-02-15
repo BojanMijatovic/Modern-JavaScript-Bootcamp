@@ -123,3 +123,22 @@ let searchName = function (name) {
 // searchName('doe');
 // searchName('Joe');
 // searchName('john');
+
+//  Default arguments
+
+let getScore = function (name = 'Anonymous', score = 0) {
+  return `${name} have ${score} points`;
+}
+
+let player1 = getScore();
+// console.log(player1);
+
+
+let getTip = function (total, tip = total * 0.2) {
+  return `Your total is ${total}  and tip is ${tip} all together is ${total + tip}$`
+};
+
+let fullSum = getTip(100);
+let fullSum1 = getTip(263);
+// console.log(fullSum);
+// console.log(fullSum1);
