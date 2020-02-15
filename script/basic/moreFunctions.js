@@ -19,9 +19,11 @@ let calcStudentScore = function (score, totalScore = 20) {
   }
 }
 
-let a = calcStudentScore(18);
-let b = calcStudentScore(16);
-let c = calcStudentScore(15);
-let d = calcStudentScore(14);
-let f = calcStudentScore(12);
-let e = calcStudentScore(10);
+// let a = calcStudentScore(18);
+// let b = calcStudentScore(16);
+// let c = calcStudentScore(15);
+// let d = calcStudentScore(14);
+// let f = calcStudentScore(12);
+// let e = calcStudentScore(10);
+
+
