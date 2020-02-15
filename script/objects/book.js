@@ -45,11 +45,47 @@ let calcTemp = function (cel) {
   }
 }
 
-let celsius = calcTemp(60);
-console.log(celsius.celsius);
+// let celsius = calcTemp(60);
+// console.log(celsius.celsius);
 
-let fahrenheit = calcTemp(60);
-console.log(celsius.fahrenheit);
+// let fahrenheit = calcTemp(60);
+// console.log(celsius.fahrenheit);
 
-let kelvin = calcTemp(60);
-console.log(celsius.kelvin);
+// let kelvin = calcTemp(60);
+// console.log(celsius.kelvin);
+
+
+
+//  Account obj 
+//  expenses tracker
+const account = {
+  name: 'John',
+  income: 0,
+  expenses: 0
+}
+
+//  add income 
+let addIncome = function (acc, amount) {
+  return acc.income = acc.income + amount;
+}
+
+//  add expenses
+
+let addExpenses = function (acc, amount) {
+  return acc.expenses = acc.expenses + amount;
+}
+
+let totalSum = function (acc) {
+  let total = acc.income = acc.income - acc.expenses;
+  return total;
+}
+
+
+let add = addIncome(account, 10);
+let exp = addExpenses(account, 2);
+let total = totalSum(account);
+// console.log(add);
+// console.log(exp);
+
+console.log(account);
+
