@@ -18,9 +18,9 @@ function throwDice(numRoll) {
 }
 // throwDice(4);
 
-function greet(name) {
-  console.log(`Hello ${name}`);
-}
+// function greet(name) {
+//   console.log(`Hello ${name}`);
+// }
 // greet('Jon');
 
 
@@ -74,3 +74,52 @@ function isValidPassword(password, userName) {
 }
 
 // isValidPassword('testj2s', 'Jane');
+
+
+function findAvg(arr) {
+  let num = 0;
+  for (let n of arr) {
+    num += n;
+  }
+  let c = num / arr.length;
+  return console.log(c);
+}
+
+// findAvg([2, 4, 6, 33]);
+
+// findAvg([0, 50]);
+
+let greet = function () {
+  console.log('Hello');
+};
+
+// greet();
+
+let square = function (num) {
+  let res = num * num;
+  return res;
+}
+
+let total = square(4);
+// console.log(total);
+
+
+let convertTemp = function (far) {
+  let celsius = (far - 32) / 1.8;
+  return celsius;
+}
+
+let con = convertTemp(68);
+// console.log(con);
+
+
+//  Search name 
+let searchName = function (name) {
+  if (name.toLowerCase().indexOf('j') > -1) {
+    return console.log(name);
+  } return console.log('Please insert name');
+}
+
+// searchName('doe');
+// searchName('Joe');
+// searchName('john');
