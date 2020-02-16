@@ -70,22 +70,41 @@ let addIncome = function (acc, amount) {
 }
 
 //  add expenses
-
 let addExpenses = function (acc, amount) {
   return acc.expenses = acc.expenses + amount;
 }
 
+//  Total summary
 let totalSum = function (acc) {
   let total = acc.income = acc.income - acc.expenses;
-  return total;
+  return `${acc.name} have ${total}$ total  from ${acc.income}$ income  and ${acc.expenses}$ off expenses`;
 }
 
+//  reset 
+let reset = function (acc) {
+  acc.income = 0;
+  acc.expenses = 0;
+}
 
-let add = addIncome(account, 10);
-let exp = addExpenses(account, 2);
-let total = totalSum(account);
+// let add = addIncome(account, 10);
+// let exp = addExpenses(account, 2);
+// let resetAccount = reset(account);
+// let a = addIncome(account, 40);
+// let b = addIncome(account, 10);
+// exp = addExpenses(account, 2);
+// let total = totalSum(account);
 // console.log(add);
 // console.log(exp);
 
-console.log(account);
+// console.log(total);
 
+  // Is valid Password function
+
+// let isValidPass = function (str) {
+//   if (str.includes('password') || str.length <= 8) {
+//     return `Please provide stronger password`
+//   } return `Welcome`
+// }
+
+// let a = isValidPass('dpasswo1rddasdaas');
+// console.log(a);
