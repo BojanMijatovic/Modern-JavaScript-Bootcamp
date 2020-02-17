@@ -27,19 +27,36 @@ const drone04 = {
   camera: false,
   antenna: true,
 }
-console.log(drone04);
+
 //  Start Drone
 let startDrone = function (droneType) {
   droneType.connection = true;
-  droneType.engine = 4;
-  droneType.speed = 0;
-  droneType.rotorTorque = 10;
-  droneType.sensors.gps = true;
-  droneType.camera = true;
-  droneType.flightMode.box = false;
-  droneType.flightMode.start = true;
+  if (droneType.connection !== false) {
+    droneType.engine = 4;
+    droneType.speed = 0;
+    droneType.rotorTorque = 10;
+    droneType.sensors.gps = true;
+    droneType.camera = true;
+    droneType.flightMode.box = false;
+    droneType.flightMode.start = true;
+  } else {
+    return console.log(`Please check connection`);
+  }
+}
+
+let startLiftOff = function (droneType, speed) {
+  droneType.speed = droneType.speed += speed;
+  if (droneType.speed >= 7) {
+    droneType.rotorTorque = speed *= droneType.rotorTorque;
+    droneType.flightMode.start = false;
+    droneType.flightMode.air = true;
+  } else {
+    return console.log(`Your speed is ${droneType.speed} please power up speed`);
+  }
 }
 
 let a = startDrone(drone04);
+let b = startLiftOff(drone04, 7);
+// console.log(b);
 
-console.log(drone04);
+// console.log(drone04);
