@@ -56,7 +56,6 @@ let stopCar = function (car) {
 // console.log(myCar);
 
 
-
 const wheelProps = {
   num: 4,
   height: 103,
