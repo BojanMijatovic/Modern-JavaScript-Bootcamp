@@ -70,3 +70,15 @@ const test = checkPass('test')
 // console.log(a);
 
 
+const addNum = function (num) {
+  return function (a) {
+    return a + num;
+  }
+}
+const num = addNum(5);
+
+let a = num(14);
+let b = num(22);
+
+console.log(a);
+console.log(b);
