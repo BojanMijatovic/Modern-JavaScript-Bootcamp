@@ -27,3 +27,46 @@ let calcStudentScore = function (score, totalScore = 20) {
 // let e = calcStudentScore(10);
 
 
+//  return functions as value 
+
+
+const tempCalc = function (temp) {
+  return function (nowTemp) {
+    if (nowTemp < temp) {
+      return `Out is freeze`
+    } return `Nothing cold`
+  }
+}
+const isCold = tempCalc(4);
+
+// let a = isCold(5);
+// console.log(a);
+
+
+
+const statusTotal = function (sum) {
+  return function (firstSum) {
+    if (firstSum > sum) {
+      return `We have ${sum}`
+    } return `We are below budget for ${firstSum - sum}$`
+  }
+}
+const isTotalOk = statusTotal(300);
+
+// let a = isTotalOk(200);
+// console.log(a);
+
+
+const checkPass = function (user) {
+  return function (acc) {
+    //  user is from checkPass arg
+    return acc.length > user.length
+  }
+}
+
+const test = checkPass('test')
+
+// a = test('testing123');
+// console.log(a);
+
+
