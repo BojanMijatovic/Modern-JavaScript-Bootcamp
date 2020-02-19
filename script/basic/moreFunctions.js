@@ -77,8 +77,40 @@ const addNum = function (num) {
 }
 const num = addNum(5);
 
-let a = num(14);
-let b = num(22);
+// let a = num(14);
+// let b = num(22);
 
-console.log(a);
-console.log(b);
+// console.log(a);
+// console.log(b);
+
+
+//  Mobile Shop
+let accountDeposit = 200;
+const tax = 0.2;
+const buySomeGadgets = 30;
+const mobilePhone = 70;
+
+//  Buy Phone
+const buyPhone = function (phone, deposit, taxes) {
+  let taxesSum = phone * taxes;
+  deposit = deposit -= (phone + taxesSum);
+
+  if (deposit > 0) {
+    return `You are now buy some tel for ${phone}$ and you have more ${deposit}$`
+  }
+  return `Sorry you are off budget now`;
+}
+
+console.log(buyPhone(mobilePhone, accountDeposit, tax));
+
+//  Count Taxes 
+const countTaxes = function (mobile, tax) {
+  return mobile * tax;
+}
+
+console.log(countTaxes(mobilePhone, tax));
+
+// Check Account Status 
+const checkAccStatus = function (acc, ) {
+
+}
