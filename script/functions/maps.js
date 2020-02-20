@@ -68,6 +68,8 @@ const numDetails = nums.map(function (num, i) {
 
 // console.log(authors);
 
+
+
 //  Arrow functions
 const addNum = (x) => {
   return x + x;
@@ -85,3 +87,38 @@ const test = x => {
   return x * 3;
 }
 // console.log(test(4));
+
+const newNums = nums.map(num => num * 2);
+// console.log(newNums);
+
+//  Single line
+const testNum = nums.map(n => n % 2 === 0 ? `Num ${n} is even` : `Num ${n} is odd`);
+// console.log(testNum);
+
+// const sortRating = books.map(book => `Book ${book.name} have rating ${book.rating}`);
+// console.log(sortRating);
+
+
+const todos = ['Learn Js', 'Work', 'Eat', 'Sleep', 'Code', 'More code'];
+
+const notes = ['Note 1', 'Note 2', 'Note 3', 'Work in Node', 'Work in React'];
+
+// notes.forEach((note, i) => {
+//   return console.log(`${i} ${note}`);
+// });
+
+// todos.forEach((todo, i) => {
+//   return console.log(`${i + 1} ${todo}`);
+// }
+// )
+
+//  For Loop
+// for (let i = 0; i < todos.length; i++) {
+//   console.log(`${i + 1} ${todos[i]}`);
+// }
+
+
+// Reverse with for loop
+// for (let i = todos.length - 1; i >= 0; i--) {
+//   console.log(` ${i} ${todos[i]}`);
+// }
