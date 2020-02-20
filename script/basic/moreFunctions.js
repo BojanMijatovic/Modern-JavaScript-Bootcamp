@@ -64,7 +64,7 @@ const checkPass = function (user) {
   }
 }
 
-const test = checkPass('test')
+// const test = checkPass('test')
 
 // a = test('testing123');
 // console.log(a);
@@ -91,26 +91,21 @@ const buySomeGadgets = 30;
 const mobilePhone = 70;
 
 //  Buy Phone
-const buyPhone = function (phone, deposit, taxes) {
+let buyPhone = function (phone, deposit, taxes) {
   let taxesSum = phone * taxes;
   deposit = deposit -= (phone + taxesSum);
-
   if (deposit > 0) {
-    return `You are now buy some tel for ${phone}$ and you have more ${deposit}$`
+    return `You are now buy some tel for ${phone}$ and you have more ${deposit}$ on deposit`
   }
   return `Sorry you are off budget now`;
 }
 
-console.log(buyPhone(mobilePhone, accountDeposit, tax));
+let test = buyPhone(mobilePhone, accountDeposit, tax);
+console.log(test);
 
 //  Count Taxes 
 const countTaxes = function (mobile, tax) {
   return mobile * tax;
 }
 
-console.log(countTaxes(mobilePhone, tax));
-
-// Check Account Status 
-const checkAccStatus = function (acc, ) {
-
-}
+// console.log(countTaxes(mobilePhone, tax));
