@@ -122,3 +122,33 @@ const notes = ['Note 1', 'Note 2', 'Note 3', 'Work in Node', 'Work in React'];
 // for (let i = todos.length - 1; i >= 0; i--) {
 //   console.log(` ${i} ${todos[i]}`);
 // }
+
+//  Find array
+const movies = [{
+  name: 'Mrs. Agent',
+  rang: 8
+},
+{
+  name: 'Mr.007',
+  rang: 7.1
+}, {
+  name: 'Mr.Doctor',
+  rang: 9
+}, {
+  name: 'Mrs. Arc',
+  rang: 7.7
+}, {
+  name: 'Tesla',
+  rang: 9.4
+}]
+
+
+// const findName = names.find(name => {
+//   return name.includes('Doe');
+// })
+// console.log(findName);
+
+const rangMovie = movies.find(movie => {
+  return movie.rang > 9;
+})
+console.log(rangMovie);
