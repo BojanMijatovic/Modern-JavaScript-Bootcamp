@@ -90,3 +90,11 @@ const test = 'SOX';
 //   return store.product.toLowerCase() === i;
 // })
 // console.log(findItem);
+
+//  Filter by price 
+// const test1 = (filter, store) => {
+//   return filterItem = store.filter(item => item.price >= filter);
+// }
+// console.log(test1(100, shop));
+
+
