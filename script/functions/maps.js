@@ -1,4 +1,4 @@
-const nums = [10, 23, 4, 5, 6, 7, 8, 11, 2, 3,];
+const nums = [10, 23, 4, 5, 6, 7, 8, 11, 2, 3, 54, 1001, 46, 20];
 const names = ['John', 'Ford', 'Terry', 'Alex', 'Rodney', 'Doe'];
 
 const books = [
@@ -147,7 +147,7 @@ const movies = [{
   name: 'Fox',
   rang: 8.2
 }, {
-  name: 'Poem',
+  name: 'A Poem',
   rang: 7.9
 }]
 
@@ -163,7 +163,7 @@ const movies = [{
 // console.log(rangMovie);
 
 
-const randomNums = [3, 44, 56, 78, 1, 33, 2111, 8, 99,];
+const randomNums = [3, 44, 56, 78, 1, 33, 2111, 8, 99, 20, 100];
 
 // const filterNums = randomNums.filter(num => num % 2 === 0);
 
@@ -188,17 +188,59 @@ const findMovie = movies.filter(movie => {
 
 
 const oddBigNums = randomNums.filter(num => num % 2 === 1 && num >= 100);
-console.log(oddBigNums);
+// console.log(oddBigNums);
 
 // const filterNum = oddBigNums.filter(num => num >= 100);
 // console.log(filterNum);
 
 
-//  Find Name 
-const name1 = 'DOE';
+//  Find Name and Replace
+// const name1 = 'john';
 
-const findName = names.filter(name => {
-  return name.toLowerCase().includes(name1.toLowerCase());
+// const findName = names.filter(name => {
+//   return name.toLowerCase().includes(name1.toLowerCase());
+// })
+
+// console.log(findName);
+
+// if (findName) {
+//   names.splice(names.indexOf(findName), 1, 'Test');
+// }
+
+// console.log(names);
+
+// const sortedNumsRev = randomNums.sort((a, b) => b - a)
+
+// console.log(sortedNumsRev);
+
+// const sortNum = randomNums.sort((a, b) => a - b);
+
+// console.log(sortNum);
+
+//  Sort Movies by Rank
+const sortMovieByRang = movies.sort((a, b) => {
+  return b.rang - a.rang;
 })
 
-console.log(findName);
+// console.log(sortMovieByRang);
+
+//  Reduce Array Function
+const sumNums = nums.reduce((total, next) => {
+  return total * next;
+});
+
+// console.log(sumNums);
+
+//  Reduce find Max num in array
+const findMaxNum = nums.reduce((max, current) => {
+
+  // if (max > current) {
+  //   return max
+  // }
+  // return current
+
+  //  Simple Option
+  return Math.max(max, current)
+})
+
+console.log(findMaxNum);
