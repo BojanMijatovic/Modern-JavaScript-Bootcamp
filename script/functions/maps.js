@@ -140,6 +140,15 @@ const movies = [{
 }, {
   name: 'Tesla',
   rang: 9.4
+}, {
+  name: 'Lambs',
+  rang: 9.1
+}, {
+  name: 'Fox',
+  rang: 8.2
+}, {
+  name: 'Poem',
+  rang: 7.9
 }]
 
 
@@ -148,7 +157,48 @@ const movies = [{
 // })
 // console.log(findName);
 
-const rangMovie = movies.find(movie => {
-  return movie.rang > 9;
+// const rangMovie = movies.find(movie => {
+//   return movie.rang > 9;
+// })
+// console.log(rangMovie);
+
+
+const randomNums = [3, 44, 56, 78, 1, 33, 2111, 8, 99,];
+
+// const filterNums = randomNums.filter(num => num % 2 === 0);
+
+// console.log(filterNums);
+
+const rangMovie = movies.filter(movie => {
+  return movie.rang >= 8;
 })
-console.log(rangMovie);
+
+// console.log(rangMovie);
+
+
+//  Find by name Movie
+const movieName = 'MRS';
+
+const findMovie = movies.filter(movie => {
+  const title = movie.name.toLowerCase();
+  return title.includes(movieName.toLowerCase());
+})
+
+// console.log(findMovie);
+
+
+const oddBigNums = randomNums.filter(num => num % 2 === 1 && num >= 100);
+console.log(oddBigNums);
+
+// const filterNum = oddBigNums.filter(num => num >= 100);
+// console.log(filterNum);
+
+
+//  Find Name 
+const name1 = 'DOE';
+
+const findName = names.filter(name => {
+  return name.toLowerCase().includes(name1.toLowerCase());
+})
+
+console.log(findName);
