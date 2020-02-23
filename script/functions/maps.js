@@ -243,4 +243,8 @@ const findMaxNum = nums.reduce((max, current) => {
   return Math.max(max, current)
 })
 
-console.log(findMaxNum);
+// console.log(findMaxNum);
+
+const minNum = randomNums.reduce((min, current) => Math.min(min, current));
+
+// console.log(minNum);
