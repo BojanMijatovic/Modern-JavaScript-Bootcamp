@@ -24,9 +24,9 @@ const d = [...text];
 const b1 = [2, 4, 3]
 const b = [...b1, 1, 5, 6, 7]
 
-const a = (...c) => {
-  return c;
-}
+// const a = (...c) => {
+//   return c;
+// }
 
 // console.log(a(...b));
 
@@ -44,4 +44,22 @@ const me = {
   skills: []
 }
 
-console.log(me);
+// console.log(me);
+
+// //  Rest params 
+// const a = function (...nums) {
+//   // collect all arg
+//   //  console.log(nums);
+//   return nums.reduce((total, current) => current + total);
+// }
+
+// console.log(a(1, 2, 3, 4, 5));
+
+
+//  More on rest params
+const numLength = (...nums) => `In array you have ${nums.length} numbers`;
+// console.log(numLength(2, 3, 4, 4, 5, 6));
+
+const add = (...nums) => nums.reduce((total, curr) => curr + total);
+// console.log(add(2, 3, 4, 5, 6, 7, 8));
+
