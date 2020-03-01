@@ -50,4 +50,5 @@ const account = {
 
 account.addItems('coffee', 3);
 account.addItems('Lap top', 1);
+account.addItems('books', 10);
 console.log(account.items);
