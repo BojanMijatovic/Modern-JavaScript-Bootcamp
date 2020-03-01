@@ -32,7 +32,22 @@ const person = {
   lastName: 'Doe',
   fullName() {
     return ` Welcome ${this.name} ${this.lastName}`
+  },
+  smile: () => `Laugh  with smile ${name.toUpperCase()}`
+}
+
+// console.log(person.fullName());
+// console.log(person.smile());
+
+
+//  Start simple app
+const account = {
+  items: [],
+  addItems(item, amount) {
+    this.items.push({ item: item, amount: amount })
   }
 }
 
-console.log(person.fullName());
+account.addItems('coffee', 3);
+account.addItems('Lap top', 1);
+console.log(account.items);
