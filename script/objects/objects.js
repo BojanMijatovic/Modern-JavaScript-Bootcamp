@@ -45,10 +45,19 @@ const account = {
   items: [],
   addItems(item, amount) {
     this.items.push({ item: item, amount: amount })
+  },
+  removeItems() {
+    return this.items.pop();
   }
 }
 
 account.addItems('coffee', 3);
 account.addItems('Lap top', 1);
 account.addItems('books', 10);
+account.addItems('beer', 6);
+
+account.removeItems();
 console.log(account.items);
+
+
+
