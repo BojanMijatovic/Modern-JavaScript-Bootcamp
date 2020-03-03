@@ -57,7 +57,7 @@ account.addItems('books', 10);
 account.addItems('beer', 6);
 
 account.removeItems();
-console.log(account.items);
+// console.log(account.items);
 
 
 
