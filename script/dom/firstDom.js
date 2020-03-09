@@ -13,8 +13,18 @@ for (let list of lists) {
 
 
 const title = document.querySelector('h1');
-console.log(title);
+// console.log(title);
+console.log(title.innerText);
+
+title.innerText = 'Test Js and Dom';
 
 
-const paragraph = document.querySelectorAll('p');
-console.log(paragraph);
+// const paragraph = document.querySelectorAll('p');
+// console.log(paragraph);
+
+let li = document.querySelectorAll('.list-items');
+for (let item of li) {
+  console.log(item);
+  item.style.color = 'red';
+  item.innerHTML = 'Test'.toUpperCase();
+}
