@@ -52,3 +52,9 @@ p {
   font-size: 1.6rem;
   opacity: 0.5;
 }
+
+.starting {
+  color: rebeccapurple;
+  font-size: 2rem;
+  text-transform: uppercase;
+}

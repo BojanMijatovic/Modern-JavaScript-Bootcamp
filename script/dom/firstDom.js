@@ -74,3 +74,12 @@ console.log(todos);
 // todos.classList.add('doneTodo');
 
 // todos.classList.toggle('doneTodo');
+
+const start = document.createElement('p');
+start.innerText = 'Test JS';
+
+start.classList.add('starting');
+
+console.log(start);
+
+todos.appendChild(start);
