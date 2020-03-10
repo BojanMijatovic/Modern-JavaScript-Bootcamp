@@ -6,11 +6,6 @@ const btnId = document.getElementById('btnSubmit');
 const lists = document.getElementsByTagName('p');
 // console.log(lists);
 
-for (let list of lists) {
-  //console.log(list);
-}
-// console.log(ul.getElementsByClassName('list'));
-
 
 const title = document.querySelector('h1');
 // console.log(title);
@@ -24,7 +19,17 @@ title.innerText = 'Test Js and Dom';
 
 let li = document.querySelectorAll('.list-items');
 for (let item of li) {
-  console.log(item);
+  // console.log(item);
   item.style.color = 'red';
-  item.innerHTML = 'Test'.toUpperCase();
+  item.innerText = 'Test'.toUpperCase();
 }
+
+const ul = document.querySelector('.testing');
+// ul.innerText = 'New Dom';
+
+// const form = document.querySelector('form');
+// form.innerHTML = '<p> New form</p>';
+// console.log(form);
+
+const inputs = document.querySelector('form');
+console.log(inputs[0].value);
