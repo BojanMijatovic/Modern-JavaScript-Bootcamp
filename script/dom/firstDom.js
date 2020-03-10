@@ -24,12 +24,53 @@ for (let item of li) {
   item.innerText = 'Test'.toUpperCase();
 }
 
-const ul = document.querySelector('.testing');
+
+const ul1 = document.querySelector('.list');
+
+// ul.children[0].innerText = 'Here is my first Dom';
+
+
 // ul.innerText = 'New Dom';
 
 // const form = document.querySelector('form');
 // form.innerHTML = '<p> New form</p>';
 // console.log(form);
 
-const inputs = document.querySelector('form');
-console.log(inputs[0].value);
+// const inputs = document.querySelector('form');
+// console.log(inputs[0].value);
+
+
+// const atr = document.querySelector('input[type="range"]');
+
+// console.log(atr.getAttribute('min'));
+
+
+// const listsI = document.querySelectorAll('.list-items');
+
+// for (let list of listsI) {
+//   list.innerText = 'I will LEARN THAT JS!!!!'
+// }
+
+const p = document.querySelector('.text-center');
+
+// p.style.color = 'white';
+// p.style.backgroundColor = 'blue';
+
+
+// const newLi = document.querySelectorAll('.testing');
+
+// for (const li of newLi) {
+//   li.style.color = 'green';
+//   li.style.fontSize = '2rem';
+//   li.style.backgroundColor = 'yellow';
+// }
+
+
+
+const todos = document.querySelector('.todos');
+console.log(todos);
+
+// todos.classList.toggle('doneTodo');
+// todos.classList.add('doneTodo');
+
+// todos.classList.toggle('doneTodo');
