@@ -53,6 +53,12 @@ p {
   opacity: 0.5;
 }
 
+.startTodo {
+  font-size: 1.6rem;
+  color: cadetblue;
+  text-transform: uppercase;
+}
+
 .starting {
   color: rebeccapurple;
   font-size: 2rem;

@@ -67,19 +67,60 @@ const p = document.querySelector('.text-center');
 
 
 
-const todos = document.querySelector('.todos');
-console.log(todos);
+// const todos = document.querySelector('.todos');
+// console.log(todos);
 
 // todos.classList.toggle('doneTodo');
 // todos.classList.add('doneTodo');
 
 // todos.classList.toggle('doneTodo');
 
-const start = document.createElement('p');
-start.innerText = 'Test JS';
+// const start = document.createElement('p');
+// start.innerText = 'Test JS';
 
-start.classList.add('starting');
+// start.classList.add('starting');
 
-console.log(start);
+// console.log(start);
 
-todos.appendChild(start);
+// todos.appendChild(start);
+
+// const todos = document.querySelector('.todos')
+
+// const addTodo = document.createElement('p');
+// addTodo.innerText = 'New code is on';
+// addTodo.classList.add('startTodo');
+
+// todos.appendChild(addTodo);
+
+// todos.style.color = 'blue';
+// // console.log(todos);
+
+
+// const test = document.querySelectorAll('.testing li');
+// console.log(test);
+
+// for (const item of test) {
+//   item.style.fontSize = '2rem';
+// }
+
+
+// const todo = document.querySelectorAll('.todo');
+
+// console.log(todo);
+
+
+// const test = document.querySelector('.testing');
+
+// console.log(test);
+
+// const removeMe = document.querySelector('.special');
+// console.log(removeMe);
+
+// const deleteMe = test.removeChild(removeMe)
+
+// console.log(deleteMe);
+
+
+const removeMe = document.querySelector('.special');
+
+removeMe.remove();
