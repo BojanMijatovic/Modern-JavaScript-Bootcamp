@@ -121,6 +121,12 @@ const p = document.querySelector('.text-center');
 // console.log(deleteMe);
 
 
-const removeMe = document.querySelector('.special');
+// const removeMe = document.querySelector('.special');
 
-removeMe.remove();
+// removeMe.remove();
+
+const ulParent = document.createElement('ul');
+
+ulParent.innerText = 'Here is new List'
+
+document.body.appendChild(ulParent);
