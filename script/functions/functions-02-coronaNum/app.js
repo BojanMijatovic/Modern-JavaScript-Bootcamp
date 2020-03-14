@@ -1,4 +1,3 @@
-
 const start = document.querySelector('#start-game-btn');
 
 const serbia = 'serbia';
@@ -15,7 +14,7 @@ const countryName = () => {
   const chooseCountry = prompt('Please pick country', '').toUpperCase();
   if (chooseCountry !== serbia && chooseCountry !== china && chooseCountry !== italy && chooseCountry !== slovenia) {
     alert(`Please pick one country ${serbia} ${china} ${italy} ${slovenia} `)
-
+    return `Please insert name off country`;
   }
   return chooseCountry;
 }
@@ -34,12 +33,46 @@ const countryStats = (country) => {
   }
 }
 
-
-
-
-start.addEventListener('click', function () {
+start.addEventListener('click', () => {
 
   const pickCountry = countryName();
   const showStats = countryStats(pickCountry);
+  console.log(pickCountry);
+
   console.log(showStats);
 })
+
+
+
+
+
+
+
+//   reminder off Rest operators
+const addNum = (...nums) => {
+  let numAr = 0;
+  for (let num of nums) {
+    numAr += num;
+  }
+  return numAr;
+}
+
+// console.log(addNum(1, 2));
+
+// const test = (a, b) => a + b;
+
+// console.log(test(2, 3));
+
+//  reminder off callback functions
+const sumNum = () => {
+  const test = (a, b) => a + b;
+
+  let one = test(2, 2);
+
+  const add = (x, y) => x + y;
+
+  return add(one, 10)
+}
+
+console.log(sumNum());
+

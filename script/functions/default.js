@@ -63,3 +63,4 @@ const numLength = (...nums) => `In array you have ${nums.length} numbers`;
 const add = (...nums) => nums.reduce((total, curr) => curr + total);
 // console.log(add(2, 3, 4, 5, 6, 7, 8));
 
+
