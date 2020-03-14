@@ -146,5 +146,5 @@ const speed = (move) => {
   return `${move} and speed is ${carSpeed}km/h`;
 }
 
-console.log(speed(startingCar));
+// console.log(speed(startingCar));
 
