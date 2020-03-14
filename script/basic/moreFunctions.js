@@ -101,7 +101,7 @@ let buyPhone = function (phone, deposit, taxes) {
 }
 
 let test = buyPhone(mobilePhone, accountDeposit, tax);
-console.log(test);
+// console.log(test);
 
 //  Count Taxes 
 const countTaxes = function (mobile, tax) {
@@ -109,3 +109,42 @@ const countTaxes = function (mobile, tax) {
 }
 
 // console.log(countTaxes(mobilePhone, tax));
+
+
+//  callback functions
+
+const showName = (first, last) => {
+  const name = () => {
+    return `Hey my name is ${first} ${last}`
+  }
+  return name();
+}
+
+const nameBio = showName('Alex', 'John');
+
+const bio = (name, age) => `${name} and I have ${age}`;
+
+// console.log(bio(nameBio, 33));
+
+
+
+
+const carType = 'Ford';
+let carStart = false;
+let carSpeed = 0;
+
+
+const startCar = () => {
+  carStart = true;
+  return `${carType} is on move`;
+}
+
+const startingCar = startCar();
+
+const speed = (move) => {
+  carSpeed = 5;
+  return `${move} and speed is ${carSpeed}km/h`;
+}
+
+console.log(speed(startingCar));
+
