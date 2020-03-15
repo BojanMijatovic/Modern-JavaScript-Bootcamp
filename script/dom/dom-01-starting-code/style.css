@@ -3,3 +3,10 @@
   font-size: 20px;
   text-transform: uppercase;
 }
+
+
+.title {
+  color: blanchedalmond;
+  background-color: cadetblue;
+  text-align: center;
+}
