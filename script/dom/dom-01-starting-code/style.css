@@ -10,3 +10,11 @@
   background-color: cadetblue;
   text-align: center;
 }
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}

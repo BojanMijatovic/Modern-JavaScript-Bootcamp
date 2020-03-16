@@ -33,4 +33,16 @@ const ul = document.querySelector('ul');
 
 const li = document.querySelector('li');
 
-console.log(li.parentElement.parentElement);
+// console.log(li.parentElement.parentElement);
+
+console.log(ul.previousElementSibling);
+
+// Style With DOM
+
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', () => {
+  // ul.classList.toggle('visible');
+  ul.classList.toggle('invisible');
+}
+)
