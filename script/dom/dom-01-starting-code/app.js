@@ -18,7 +18,19 @@ const list = document.querySelectorAll('.list-items');
 console.log(list);
 
 //  Change property with class
-
 const h1 = document.querySelector('#main-title');
 h1.innerText = 'New Title on DOM';
 h1.className = 'title';
+
+//  Input text
+const input = document.querySelector('#inputValue');
+//console.log(input.value);
+
+
+const ul = document.querySelector('ul');
+
+// console.log(ul.firstElementChild.hidden = true);
+
+const li = document.querySelector('li');
+
+console.log(li.parentElement.parentElement);
