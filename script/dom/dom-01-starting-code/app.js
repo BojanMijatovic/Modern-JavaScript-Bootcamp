@@ -46,3 +46,18 @@ btn.addEventListener('click', () => {
   ul.classList.toggle('invisible');
 }
 )
+
+// Add new Element to html UL > LI
+const test = 4;
+const hed = document.createElement('li');
+hed.classList = 'test';  // Add css CLASS
+hed.innerHTML = `<ul>${test}</ul>`;
+
+ul.appendChild(hed);
+
+// Remove Child on list 
+ul.removeChild(hed);
+
+
+// Remove Element
+// h1.remove();
