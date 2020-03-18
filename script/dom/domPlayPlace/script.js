@@ -25,6 +25,9 @@ const clearInput = () => {
 const addNameHandler = () => {
 
   const newName = document.createElement('li');
+  if (nameValue.value === '') {
+    alert(`Please insert your name in input place`)
+  }
   newName.innerText = nameValue.value;
   newName.classList = 'listStyle';
   names.push(newName);
@@ -34,7 +37,6 @@ const addNameHandler = () => {
 
 
 //  Change Title Value
-
 const changeTitleValue = () => {
   title.innerText = 'This is good beginning';
   title.classList = 'main-title';
