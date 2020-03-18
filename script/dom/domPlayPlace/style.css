@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+.main-title {
+  font-size: 3rem;
+  color: teal;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.main-color {
+  background-color: seashell;
+}
+
+.listStyle {
+  list-style: none;
+  font-size: 1.6rem;
+  color: coral;
+  text-transform: uppercase;
+}
