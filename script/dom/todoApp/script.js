@@ -43,8 +43,11 @@ const filterTodos = document.createElement('h2');
 filterTodos.textContent = `You have more ${filterIncompleteTodos.length} to complete`;
 document.body.append(filterTodos);
 
-const btn = document.querySelector('button');
+const btn = document.getElementById('add-todo');
 
-btn.addEventListener('click', () => {
-  console.log(`You just click on btn`);
-})
+const addTodo = () => {
+  console.log('add todo');
+}
+
+
+btn.addEventListener('click', addTodo);
