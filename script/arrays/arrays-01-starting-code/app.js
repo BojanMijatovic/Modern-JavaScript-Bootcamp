@@ -52,7 +52,7 @@ const findIndexJob = person.findIndex((person, id) => { // return index off
 // console.log(findIndexJob);
 
 
-const prices = [2, 44, 5.2, 1.3];
+const prices = [2, 44, 5.2, 1.3, 1.5, 3, 4];
 const taxes = 0.2;
 const newPrice = []; // ----  empty arr to add new Prices 
 // const addTax = prices.map((price) => {  // map function  
@@ -71,4 +71,26 @@ const shopPrice = prices.map((price, id) => {
   return item;
 });
 
-console.log(shopPrice);
+// console.log(shopPrice);
+
+
+const sortedPrices = prices.sort((a, b) => { // sorted function
+  if (a > b) {
+    return 1;
+  } else if (a === b) {
+    return 0;
+  } else {
+    return -1;
+  }
+});
+
+// console.log(sortedPrices);
+
+sortedPrices.reverse(); // Reverse arr
+// console.log(sortedPrices);
+
+const filteredPrice = prices.filter(price => price > 5); // return new arr 
+// console.log(filteredPrice);
+
+const reducePrice = prices.reduce((prevV, currentV) => currentV + prevV);
+console.log(reducePrice);
