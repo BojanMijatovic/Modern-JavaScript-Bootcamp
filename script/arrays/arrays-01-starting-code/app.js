@@ -1,5 +1,5 @@
 
-const numbers = [1, 2, 3, 4];
+
 //console.log(numbers);
 
 const newArr = new Array(); // obj constructor
@@ -130,3 +130,35 @@ const showF = () => {
 }
 
 // showF();
+
+
+
+const numbers = [1, 2, 3, 4, 3.2, 11, 20];
+
+
+//  Filter arr
+const numBig = numbers.filter(num => num > 4);
+// console.log(numBig);
+
+//  Map and create obj 
+const mapNum = numbers.map((num, id) => {
+  const newNum = { id: id, value: num };
+  return newNum;
+})
+// console.log(mapNum);
+
+
+//  Reduce method
+const sumAllNums = numbers.reduce((curNum, nexNum) => curNum * nexNum);
+// console.log(sumAllNums);
+
+
+//  Destructing Arr
+const findMinAndMax = () => {
+  let [min, max] = numbers;
+  min = Math.min(...numbers);
+  max = Math.max(...numbers);
+  return console.log(`You have min num ${min} and max num ${max}`);
+}
+
+// findMinAndMax();
