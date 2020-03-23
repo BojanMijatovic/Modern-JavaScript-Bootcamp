@@ -92,5 +92,41 @@ sortedPrices.reverse(); // Reverse arr
 const filteredPrice = prices.filter(price => price > 5); // return new arr 
 // console.log(filteredPrice);
 
-const reducePrice = prices.reduce((prevV, currentV) => currentV + prevV);
-console.log(reducePrice);
+const reducePrice = prices.reduce((prevV, currentV) => currentV + prevV); // reduce method add + add
+// console.log(reducePrice);
+
+const strMethod = 'New York 20.2020';
+
+const revStr = strMethod.split('').reverse().join('');
+// console.log(revStr);
+
+
+// ------ Spread Operators -------
+
+
+const addHobbies = [...hobbies, 'Learn OOP'];
+
+// console.log(hobbies);
+// console.log(addHobbies);
+
+const minPrice = Math.min(...prices);
+const maxPrice = Math.max(...prices);
+console.log(minPrice);
+console.log(maxPrice);
+
+const names = ['John', 'Max', 'Alex'];
+
+const showNames = names.forEach((name, i) => console.log(`${i + 1} place ${name}`));
+
+// console.log(showNames);
+
+
+//  ----------Array Destructuring
+
+const showF = () => {
+  const age = 34;
+  const [firstName] = names;
+  return console.log(`${firstName} have ${age} age`);
+}
+
+// showF();
