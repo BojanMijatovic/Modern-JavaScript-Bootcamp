@@ -8,14 +8,13 @@ const person = {
   }
 }
 
-console.log(person);
+// console.log(person);
 
 person.age = 13;
-console.log(person);
+// console.log(person);
 
 const remPerson = () => {
   delete person.age;
 }
-
-remPerson();
-console.log(person);
+// remPerson();
+// console.log(person);

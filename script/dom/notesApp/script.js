@@ -25,25 +25,55 @@ const allP = document.querySelectorAll('p');
 
 // document.body.append(newP);
 
+const searchNote = document.getElementById('search-note');
 const addBtn = document.getElementById('create-note');
 const removeBtn = document.getElementById('remove-note');
+const notesList = document.querySelector('.notes');
 
-
-//  add notes
-const addNote = (e) => {
-  e.target.textContent = 'This is new btn';
+//  Change Btn
+const changeBtn = () => {
+  addBtn.textContent = 'Add Btn'
 }
 
 //  Remove all notes
 const removeAllNotes = () => {
   // document.querySelectorAll('.note').forEach(note => note.remove());
 
-  const notes = document.querySelectorAll('.note'); // more elegant for me
-  notes.forEach(note => note.remove());
+  notesList.remove();  // more elegant for me
 }
 
 
 
 
-addBtn.addEventListener('click', addNote);
-removeBtn.addEventListener('click', removeAllNotes)
+const filters = {
+  searchText: ''
+}
+
+const renderNotes = (notes, filters) => {
+  const filteredNotes = notes.filter(note => note.title.toLowerCase().includes(filters.searchText.toLowerCase()))
+
+  notesList.innerHTML = '';
+
+  filteredNotes.forEach((note) => {
+    const noteEl = document.createElement('p');
+    noteEl.textContent = note.title;
+    notesList.append(noteEl);
+  }
+  )
+};
+
+
+renderNotes(notes, filters);
+
+//  Search Input
+searchNote.addEventListener('input', (e) => {
+  filters.searchText = e.target.value;
+  renderNotes(notes, filters);
+})
+
+
+addBtn.addEventListener('click', changeBtn);
+removeBtn.addEventListener('click', removeAllNotes);
+
+
+

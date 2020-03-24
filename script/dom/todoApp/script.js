@@ -22,6 +22,22 @@ const todos = [
 //   }
 // })
 
+const todosList = document.getElementById('todo-list');
+
+
+
+const filters = {
+  filteredTodos: ''
+}
+
+const renderTodos = (todos, filter) => {
+  const matchTodos = todos.filter((todo) => {
+    todo.toLowerCase().includes(filter.filteredTodos.toLowerCase())
+  })
+  todosList.innerHTML = ''
+}
+
+
 //  count todos 
 const todoCount = () => {
 
@@ -39,15 +55,21 @@ todoCount(todos);
 //  filter todos
 const filterIncompleteTodos = todos.filter(todo => !todo.completed);
 
+
 const filterTodos = document.createElement('h2');
 filterTodos.textContent = `You have more ${filterIncompleteTodos.length} to complete`;
-document.body.append(filterTodos);
+todosList.append(filterTodos);
 
-const btn = document.getElementById('add-todo');
+const btn = document.getElementById('add-btn');
+const searchTodo = document.getElementById('search-todo');
 
-const addTodo = () => {
+//  Add btn
+const addBtn = () => {
   console.log('add todo');
 }
 
+btn.addEventListener('click', addBtn);
 
-btn.addEventListener('click', addTodo);
+searchTodo.addEventListener('input', (e) => {
+  console.log(e.target.value);
+})
