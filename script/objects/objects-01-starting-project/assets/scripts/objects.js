@@ -12,18 +12,22 @@ const renderMovies = (filter = '') => {
   } else {
     movieList.classList.add('visible');
   }
+
   movieList.innerHTML = '';
 
   const filteredMovies = !filter ? movies : movies.filter(movie => movie.info.title.includes(filter))
 
-
   filteredMovies.forEach((movie) => {
     const moveEl = document.createElement('li');
-    let text = movie.info.title + ' - ';
+    const { info, ...otherProps } = movie;  //  Destructuring obj  // and rest parameter
+    console.log(otherProps);
+    let { getFormattedTitle } = movie; //  Destructuring obj    //movieTitle is new name for title in info obj
+    // getFormattedTitle = getFormattedTitle.bind(movie);
+    let text = getFormattedTitle.apply(movie) + ' - ';
 
-    for (const key in movie.info) {   //  Dynamic Properties
+    for (const key in info) {   //  Dynamic Properties
       if (key !== 'title') {
-        text = text + `${key}: ${movie.info[key]}`
+        text = text + `${key}: ${info[key]}`
       }
     }
     moveEl.textContent = text; //Outputting Dynamic Properties
@@ -49,20 +53,20 @@ const addMovieHandler = () => {
       title,
       [extraName]: extraValue //  Dynamic stored Name
     },
-    id: Math.random()
+    id: Math.random().toString(), //rest parameter
+    getFormattedTitle() {
+      return this.info.title.toUpperCase();
+    }
   }
   movies.push(newMovie);
   renderMovies();
 }
 
 // Search Movie
-
 const searchMovieHandler = () => {
   const filterTerm = document.getElementById('filter-title').value;
   renderMovies(filterTerm)
 }
-
-
 
 addMovieBtn.addEventListener('click', addMovieHandler);
 searchBtn.addEventListener('click', searchMovieHandler);
