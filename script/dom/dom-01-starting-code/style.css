@@ -2,6 +2,7 @@
   color: rebeccapurple;
   font-size: 20px;
   text-transform: uppercase;
+  list-style: none;
 }
 
 
@@ -17,4 +18,14 @@
 
 .invisible {
   display: none;
+}
+
+.danger {
+  background: crimson;
+  color: aliceblue;
+}
+
+.critical {
+  background: orange;
+  color: aliceblue;
 }

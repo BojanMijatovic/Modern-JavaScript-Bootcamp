@@ -1,69 +1,62 @@
-const p = document.createElement('p');
-p.innerText = 'New to Dom';
-p.className = 'test';
-document.body.appendChild(p);
+const title = document.getElementById('main-title');
+title.classList = 'title';
+title.textContent = 'New Dom Title';
 
-// Get element by ID selector 
-// const title = document.getElementById('main-title');
-//querySelector ALL!! ali items with that class
-const list = document.querySelectorAll('.list-items');
-//  Change property with class
-const h1 = document.querySelector('#main-title');
-h1.innerText = 'New Title on DOM';
-h1.className = 'title';
+// -------------- First Example ------------
+//  Selectors 
+// const textItem = document.getElementById('text').value;
+// const btnAdd = document.querySelector('.add-text');
 
 
-//console.log(input.value);
-const ul = document.querySelector('ul');
-// console.log(ul.firstElementChild.hidden = true);
-const li = document.querySelector('li');
-
-// console.log(li.parentElement.parentElement);
-
-// Style With DOM
-const btn = document.querySelector('button');
-
-btn.addEventListener('click', () => {
-  // ul.classList.toggle('visible');
-  ul.classList.toggle('invisible');
-}
-)
-
-// Add new Element to html UL > LI
-const test = 4;
-const hed = document.createElement('li');
-hed.classList = 'test';  // Add css CLASS
-hed.innerHTML = `<ul>${test}</ul>`;
-
-ul.appendChild(hed);
-
-// Remove Child on list 
-ul.removeChild(hed);
+//  add Items to list
+// const addTextItems = () => {
+//   const liText = document.createElement('li');
+//   liText.textContent = textItem;
+//   liText.classList = 'test';
+//   document.getElementById('list-items').append(liText);
+// }
 
 
-// Remove Element
-// h1.remove();
+// btnAdd.addEventListener('click', addTextItems);
+
+// ------- Second Example -----
+
+const states = [];
+const btnAddState = document.querySelector('.add-cases');
+const ulStates = document.getElementById('list-states');
 
 
-const items = [];
-const input = document.querySelector('#inputValue').value;
-const newUl = document.querySelector('.newItems');
-const addBtn = document.getElementById('add-item');
-const searchBtn = document.getElementById('src-btn');
+//  Add state
+const addStates = () => {
+  const stateName = document.getElementById('state-value').value;
+  const caseValue = document.getElementById('cases-value').value;
+  const addInfo = document.getElementById('info-value').value;
 
-
-const addItem = () => {
-
-  //  Validation
-  if (input.trim() === '') {
-    alert('Please insert some item')
+  const state = {
+    name: stateName,
+    activeCases: caseValue,
+    disease: addInfo
   }
-  const newLi = document.createElement('p');
-  newLi.textContent = input;
-  newUl.append(newLi);
-  items.push(input)
-  console.log(items);
 
+  //  Render State
+  const renderState = () => {
+    const newState = document.createElement('li');
+    newState.innerHTML = `<p>State ${state.name}</p>
+      <p>Active cases ${state.activeCases}</p>
+      <p>Info ${state.disease}</p>`
+    ulStates.append(newState);
+
+    //  Danger status
+    if (state.activeCases > 100) {
+      newState.classList = 'danger';
+    } else if (state.activeCases > 50 && state.activeCases < 100) {
+      newState.classList = 'critical'
+    }
+  }
+
+  renderState();
+  states.push(state)
 }
 
-addBtn.addEventListener('click', addItem);
+
+btnAddState.addEventListener('click', addStates);
