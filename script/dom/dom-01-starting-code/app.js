@@ -23,8 +23,8 @@ title.textContent = 'New Dom Title';
 
 const states = [];
 const btnAddState = document.querySelector('.add-cases');
+const btnRemoveStates = document.getElementById('remove');
 const ulStates = document.getElementById('list-states');
-
 
 //  Add state
 const addStates = () => {
@@ -32,10 +32,15 @@ const addStates = () => {
   const caseValue = document.getElementById('cases-value').value;
   const addInfo = document.getElementById('info-value').value;
 
+
   const state = {
     name: stateName,
     activeCases: caseValue,
     disease: addInfo
+  }
+
+  if (stateName.trim() === '' || caseValue.trim() === '' || addInfo.trim() === '') {
+    alert('Please insert Values')
   }
 
   //  Render State
@@ -47,10 +52,12 @@ const addStates = () => {
     ulStates.append(newState);
 
     //  Danger status
-    if (state.activeCases > 100) {
+    if (state.activeCases >= 100) {
       newState.classList = 'danger';
-    } else if (state.activeCases > 50 && state.activeCases < 100) {
-      newState.classList = 'critical'
+    } else if (state.activeCases > 0 && state.activeCases < 100) {
+      newState.classList = 'critical';
+    } else {
+      newState.classList = 'good';
     }
   }
 
@@ -58,5 +65,13 @@ const addStates = () => {
   states.push(state)
 }
 
+// Remove  All states
+const removeStates = () => {
+  states.splice(0, states.length);
+  ulStates.innerHTML = ``
+}
+
+
 
 btnAddState.addEventListener('click', addStates);
+btnRemoveStates.addEventListener('click', removeStates);
