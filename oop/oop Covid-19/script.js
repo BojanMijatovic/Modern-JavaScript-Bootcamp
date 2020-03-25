@@ -15,6 +15,8 @@ class Patient {
 }
 
 class Hospital {
+
+
   doctors = [
     new Doctor('Mike', 4, 'Epidemiology'),
     new Doctor('Alex', 10, 'Lung Deceases')
@@ -33,8 +35,8 @@ class Hospital {
   }
 
   patients = [
-    new Patient('Scot', 'ill', 'covid-19'),
-    new Patient('Test', 'car accident', 'critical')
+    new Patient('Scot', 'covid-19', 'critical'),
+    new Patient('John', 'car accident', 'critical')
   ]
 
   addPatients() { }
@@ -42,7 +44,7 @@ class Hospital {
   showPatientsStatus() {
     for (const patient of this.patients) {
       const newPatient = document.createElement('li');
-      newPatient.innerHTML = `<p>Patient ${patient.name} status ${patient.status} ${patient.illness}</p>`;
+      newPatient.innerHTML = `<p>Patient ${patient.name} suffer from: ${patient.status} ${patient.illness}</p>`;
       document.getElementById('patients').append(newPatient);
     }
   }
