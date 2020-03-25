@@ -72,13 +72,24 @@ class BloodPressure {
   }
 }
 
+class BloodSugarLevel {
+  constructor(value, timeLastMeal) {
+    this.value = value;
+    this.timeLastMeal = timeLastMeal;
+  }
+}
+
 
 class PickTests {
   doctor = new Doctor('Alex');
   patient = new Patient('Rex');
-  test = new BloodPressure(0, 0, 180); // Extends values
-  labTest() {
-    return console.log(`${this.doctor.name} do on patient ${this.patient.name} test blood pressure with result ${this.test.pulse}`);
+  testBlood = new BloodPressure(0, 0, 180); // Extends values
+  testSugar = new BloodSugarLevel(4)
+  bloodTest() {
+    return console.log(`${this.doctor.name} do on patient ${this.patient.name} test blood pressure with result ${this.testBlood.pulse}`);
+  }
+  sugarTest() {
+    return console.log(`${this.patient.name} have results off sugar level ${this.testSugar.value}`);
   }
 }
 
@@ -87,5 +98,7 @@ const pickASpecialist = new PickDoctor();
 pickASpecialist.choseDoctor(Doctor, Patient);
 
 const newTest = new PickTests(Doctor, Patient, BloodPressure);
-newTest.labTest();
+newTest.bloodTest();
 
+const testSugarLevel = new PickTests(Patient, BloodSugarLevel);
+testSugarLevel.sugarTest();
