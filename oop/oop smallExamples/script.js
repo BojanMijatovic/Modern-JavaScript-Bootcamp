@@ -67,7 +67,7 @@ class Motor extends Drone {
   startB() {
     const b = new Battery();
     b.startBattery();
-    return `${b.capacity}`;
+    return b.capacity;
   }
 
   startControls() {
@@ -76,7 +76,7 @@ class Motor extends Drone {
       console.log(`No recommendation  to fly battery status is ${batStatus}`);
     } else {
       const controls = new ElectronicSpeedControls();
-      return console.log(`Control motors is on ${controls.startElectronicControls()}km\/h battery status is ${batStatus}`);
+      return console.log(`Control motors is on ${controls.startElectronicControls()}km\/h battery status is ${batStatus}%`);
     }
   }
 }
@@ -89,11 +89,7 @@ class Battery {
     this.start = true;
     this.capacity = this.capacity - 0.1;
   }
-
-
 }
-
-
 
 /*
 ESC
@@ -106,12 +102,29 @@ class ElectronicSpeedControls {
   motorSpeed = 0;
 
   startElectronicControls() {
-    return this.motorSpeed = 2;
+    return this.motorSpeed = this.motorSpeed += 2;
   }
 }
 
 class FlightController {
   connection = false;
+  deviceSignal = 'strong';
+  deviceControl = 'bluetooth';
+
+  startControl() {
+    return this.connection = 'true';
+  }
+
+  checkMotorStatus() {
+    const motorStatus = new Motor();
+    motorStatus.startMotor();
+    const start = this.startControl();
+    if (this.deviceSignal === 'strong' && start) {
+      return console.log(`We are good to fly`);
+    } else {
+      return console.log(`Please check some parameters`);
+    }
+  }
 }
 
 class Charger {
@@ -120,13 +133,12 @@ class Charger {
 
 // class Propeller { }
 
-
-
-
 const startModel = new Motor();
 
 const batteryStatus = startModel.startB();
-console.log(batteryStatus);
 
-console.log(startModel.startMotor());
+
 startModel.startControls();
+
+const checkBeforeFly = new FlightController();
+checkBeforeFly.checkMotorStatus();
