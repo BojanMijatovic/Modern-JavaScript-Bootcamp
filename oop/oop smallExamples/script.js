@@ -35,110 +35,163 @@
 // console.log(john.readBook());
 
 
-class Drone {
-  constructor(id) {
-    this.id = id
+// class Drone {
+//   constructor(id) {
+//     this.id = id
+//   }
+// }
+
+// class Motor extends Drone {
+//   repair = false;
+//   start = false;
+//   speed = 0;
+//   id = 'V001';
+
+//   startMotor() {
+//     this.start = true;
+//     this.motor = 'on';
+//     if (this.start && this.speed > 1) {
+//       this.motor;
+//     } else {
+//       this.motor = false;
+//     }
+//     return `Drone ${this.id}  is start with speed ${this.speed}km\/h`;
+//   }
+
+//   turnOffMotor() {
+//     this.speed = 0;
+//     this.motor = 'off';
+//   }
+
+//   startB() {
+//     const b = new Battery();
+//     b.startBattery();
+//     return b.capacity;
+//   }
+
+//   startControls() {
+//     const batStatus = this.startB();
+//     if (batStatus < 25) {
+//       console.log(`No recommendation  to fly battery status is ${batStatus}`);
+//     } else {
+//       const controls = new ElectronicSpeedControls();
+//       return console.log(`Control motors is on ${controls.startElectronicControls()}km\/h battery status is ${batStatus}%`);
+//     }
+//   }
+// }
+
+// class Battery {
+//   capacity = 100;
+//   start = false;
+
+//   startBattery() {
+//     this.start = true;
+//     this.capacity = this.capacity - 0.1;
+//   }
+// }
+
+// /*
+// ESC
+// or Electronic Speed Controls is a component that works set on each motor rotation speed . You need four pieces of ESC are connected to each of the four motors earlier.
+// Later, the ESC is connected to the battery as a power source via a socket or via power distribution board first. The level of accuracy of motor rotation is very important to maintain the stability quadcopter , so use the appropriate and qualified ESC .
+// As a recommendation , use ESC contained therein Simonk Firmware , firmware is able to change the refresh rate of the ESC so as to provide instructions per second more than the ESC to the motor
+// */
+// class ElectronicSpeedControls {
+//   motorSpeed = 0;
+//   startElectronicControls() {
+//     return this.motorSpeed = this.motorSpeed += 2;
+//   }
+// }
+// class FlightController {
+//   connection = false;
+//   deviceSignal = 'strong';
+//   deviceControl = 'bluetooth';
+
+//   startControl() {
+//     return this.connection = 'true';
+//   }
+
+//   checkMotorStatus() {
+//     const motorStatus = new Motor();
+//     motorStatus.startMotor();
+//     const start = this.startControl();
+//     if (this.deviceSignal === 'strong' && start) {
+//       return console.log(`We are good to fly`);
+//     } else {
+//       return console.log(`Please check some parameters`);
+//     }
+//   }
+// }
+
+// class Charger {
+//   turnOff = true;
+// }
+
+// // class Propeller { }
+
+// const startModel = new Motor();
+// const batteryStatus = startModel.startB();
+
+// startModel.startControls();
+
+// console.log(startModel.startMotor());
+
+// const checkBeforeFly = new FlightController();
+// checkBeforeFly.checkMotorStatus();
+
+
+// class Trout extends Fish {
+//   constructor(habitat, length, variety) {
+//     super(habitat, length)
+//     this.variety = variety
+//   }
+
+
+
+//  -------- Course Example
+
+
+class Course {
+  constructor(title, length, price) {
+    this.title = title;
+    this.length = length;
+    this.price = price;
+  }
+
+  calcLengthPrice() {
+    return `${this.length / this.price} is value off ${this.title} course`;
+  }
+
+  summaryCourse() {
+    return `You have ${this.title} course with ${this.length}h for price off ${this.price}$`;
   }
 }
 
-class Motor extends Drone {
-  repair = false;
-  start = false;
-  speed = 0;
-  id = 'V001';
 
-  startMotor() {
-    this.start = true;
-    this.motor = 'on';
+class PracticalCourse extends Course {
 
-    if (this.start && this.speed > 1) {
-      this.motor;
-    } else {
-      this.motor = false;
-    }
-    return `Drone ${this.id}  is start with speed ${this.speed}km\/h`;
+  constructor(title, numOffExercises) {
+    super(title);
+    this.numOffExercises = numOffExercises;
   }
 
-  turnOffMotor() {
-    this.speed = 0;
-    this.motor = 'off';
-  }
-
-  startB() {
-    const b = new Battery();
-    b.startBattery();
-    return b.capacity;
-  }
-
-  startControls() {
-    const batStatus = this.startB();
-    if (batStatus < 25) {
-      console.log(`No recommendation  to fly battery status is ${batStatus}`);
-    } else {
-      const controls = new ElectronicSpeedControls();
-      return console.log(`Control motors is on ${controls.startElectronicControls()}km\/h battery status is ${batStatus}%`);
-    }
+  publish() {
+    return `Course ${this.title} have ${this.numOffExercises} exercises`
   }
 }
 
-class Battery {
-  capacity = 100;
-  start = false;
-
-  startBattery() {
-    this.start = true;
-    this.capacity = this.capacity - 0.1;
-  }
-}
-
-/*
-ESC
-or Electronic Speed Controls is a component that works set on each motor rotation speed . You need four pieces of ESC are connected to each of the four motors earlier.
-Later, the ESC is connected to the battery as a power source via a socket or via power distribution board first. The level of accuracy of motor rotation is very important to maintain the stability quadcopter , so use the appropriate and qualified ESC .
-As a recommendation , use ESC contained therein Simonk Firmware , firmware is able to change the refresh rate of the ESC so as to provide instructions per second more than the ESC to the motor
-*/
-
-class ElectronicSpeedControls {
-  motorSpeed = 0;
-
-  startElectronicControls() {
-    return this.motorSpeed = this.motorSpeed += 2;
-  }
-}
-
-class FlightController {
-  connection = false;
-  deviceSignal = 'strong';
-  deviceControl = 'bluetooth';
-
-  startControl() {
-    return this.connection = 'true';
-  }
-
-  checkMotorStatus() {
-    const motorStatus = new Motor();
-    motorStatus.startMotor();
-    const start = this.startControl();
-    if (this.deviceSignal === 'strong' && start) {
-      return console.log(`We are good to fly`);
-    } else {
-      return console.log(`Please check some parameters`);
-    }
-  }
-}
-
-class Charger {
-  turnOff = true;
-}
-
-// class Propeller { }
-
-const startModel = new Motor();
-
-const batteryStatus = startModel.startB();
 
 
-startModel.startControls();
 
-const checkBeforeFly = new FlightController();
-checkBeforeFly.checkMotorStatus();
+const react = new Course('React', 50, 20);
+const node = new Course('Node', 33, 11);
+
+const practicalC = new PracticalCourse('Node', 10);
+
+console.log(practicalC.publish());
+
+
+console.log(react);
+
+console.log(react.summaryCourse());
+console.log(node.calcLengthPrice());
