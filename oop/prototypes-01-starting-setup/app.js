@@ -59,3 +59,7 @@
 
 // const t = new Person();
 // t.greet();
+
+// const btn = document.querySelector('button');
+
+// btn.addEventListener('click', t.greet)
