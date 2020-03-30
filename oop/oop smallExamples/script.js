@@ -151,47 +151,136 @@
 //  -------- Course Example
 
 
-class Course {
-  constructor(title, length, price) {
-    this.title = title;
-    this.length = length;
-    this.price = price;
-  }
+// class Course {
+//   constructor(title, length, price) {
+//     this.title = title;
+//     this.length = length;
+//     this.price = price;
+//   }
 
-  calcLengthPrice() {
-    return `${this.length / this.price} is value off ${this.title} course`;
-  }
+//   calcLengthPrice() {
+//     return `${this.length / this.price} is value off ${this.title} course`;
+//   }
 
-  summaryCourse() {
-    return `You have ${this.title} course with ${this.length}h for price off ${this.price}$`;
-  }
-}
-
-
-class PracticalCourse extends Course {
-
-  constructor(title, numOffExercises) {
-    super(title);
-    this.numOffExercises = numOffExercises;
-  }
-
-  publish() {
-    return `Course ${this.title} have ${this.numOffExercises} exercises`
-  }
-}
+//   summaryCourse() {
+//     return `You have ${this.title} course with ${this.length}h for price off ${this.price}$`;
+//   }
+// }
 
 
+// class PracticalCourse extends Course {
+
+//   constructor(title, numOffExercises) {
+//     super(title);
+//     this.numOffExercises = numOffExercises;
+//   }
+
+//   publish() {
+//     return `Course ${this.title} have ${this.numOffExercises} exercises`
+//   }
+// }
 
 
-const react = new Course('React', 50, 20);
-const node = new Course('Node', 33, 11);
-
-const practicalC = new PracticalCourse('Node', 10);
-
-console.log(practicalC.publish());
 
 
-console.log(react);
+// const react = new Course('React', 50, 20);
+// const node = new Course('Node', 33, 11);
+// const practicalC = new PracticalCourse('Node', 10);
 
-console.log(react.summaryCourse());
-console.log(node.calcLengthPrice());
+// console.log(practicalC.publish());
+
+// console.log(react);
+
+// console.log(react.summaryCourse());
+// console.log(node.calcLengthPrice());
+
+
+
+//   --------- Car Register sample OOP
+
+// class Car {
+
+//   constructor(id, type, test, owner) {
+//     this.id = id;
+//     this.type = type;
+//     this.test = test;
+//     this.owner = owner;
+//   }
+
+
+//   addCar() {
+//     const cars = [];
+//     const car1 = new Car(784, 'Mazda', 'passed', 'Max');
+//     const car2 = new Car(4322, 'BMW', 'passed', 'Rex');
+//     cars.push(car1, car2);
+//     return cars;
+//   }
+
+//   registeredCars() {
+//     const cars = this.addCar();
+//     cars.forEach((car) => console.log(`${car.type} with id ${car.id} is ${car.test} registration`))
+//   }
+// }
+
+
+// class Fiat extends Car {
+
+//   constructor(id, test, engine, numOffWheels) {
+//     super(id);
+//     this.test = test;
+//     this.engine = engine;
+//     this.numOffWheels = numOffWheels;
+//   }
+
+//   showFiat() {
+//     return `${this.id} is ${this.test} with ${this.engine} power, model have ${this.numOffWheels} wheels`
+//   }
+// }
+
+
+// const ford = new Car('4223', 'Ford', 'not passed', 'John');
+// console.log(ford);
+
+// const cars = new Car();
+// cars.registeredCars();
+
+// const fiat = new Fiat(32123, 'passed', '150w', 4);
+// console.log(fiat.showFiat());
+
+
+// class Person {
+
+//   constructor(name, lastName, age, id) {
+//     this.name = name;
+//     this.lastName = lastName;
+//     this.id = id;
+//     this.age = age;
+//   }
+
+//   showPerson() {
+//     return `${this.name} ${this.lastName} have ${this.age} years and his id is ${this.id}`;
+//   }
+// }
+
+
+// class Man extends Person {
+
+//   constructor(name, lastName, age, job, id) {
+//     super(name, lastName, age, id)
+//     this.job = job;
+//   }
+
+//   addJob() {
+//     const sP = this.showPerson();
+//     const gen = `and his job is ${this.job}`;
+//     return `${sP} ${gen}`;
+//   }
+// }
+
+
+// const men1 = new Person('Alex', 'Smith', 25, 4131);
+// console.log(men1.showPerson());
+
+// const bob = new Man('Bob', 'Steve', 34, 'driver', 31511);
+
+// console.log(bob.addJob());
