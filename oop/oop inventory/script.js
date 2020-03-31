@@ -1,6 +1,3 @@
-
-
-
 class Inventory {
 
   constructor(amount, type, id) {
@@ -22,7 +19,7 @@ class Inventory {
   showItems() {
     this.items.forEach(item => {
       const newItem = document.createElement('p');
-      newItem.innerHTML = `<p>We have ${item.amount} ${item.type}  with ID: ${item.id} in warehouse</p>`;
+      newItem.innerHTML = `<p>${item.amount} ${item.type} with ID: ${item.id} in warehouse</p>`;
       document.body.append(newItem);
     }
     )

@@ -284,3 +284,28 @@
 // const bob = new Man('Bob', 'Steve', 34, 'driver', 31511);
 
 // console.log(bob.addJob());
+
+
+
+
+// -------- Time Out 
+
+// const showThis = () => {
+//   console.log("hello form here ");
+// }
+
+
+// setTimeout(showThis, 2000);
+
+// -----------Interval
+
+// setInterval(() => {
+//   let one = 1;
+//   console.log(`This is one ${one++}`);
+// }, 2000);
+
+
+//  ----- Get Date
+
+// const day = new Date();
+// console.log(`${day.getDate()} ${day.getMonth()}  ${day.getFullYear()}`);
