@@ -1,12 +1,4 @@
 
-// const btn = document.querySelector('button');
-
-// const btnClickHandler = (event) => console.log(event.target.textContent);
-
-
-
-// btn.addEventListener('click', btnClickHandler);
-
 // setTimeout(() => {
 //   btn.removeEventListener('click', btnClickHandler);
 // }, 2000);
@@ -20,8 +12,56 @@
 // )
 
 
-  // --- Pure Functions 
+// --- Pure Functions 
 
 
 // const add = (x, y) => x + y;
 // console.log(add(2, 3));
+
+
+// let maxNum = Math.random();
+// console.log(maxNum);
+
+// console.log('First');
+
+// setTimeout(() => {
+//   console.log('Time out');
+// }, 2000);
+
+// console.log('After');
+
+
+
+const btn = document.querySelector('button');
+
+const setTimer = (duration) => {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Done!');
+    }, duration);
+  })
+  return promise;
+}
+
+
+const btnClickHandler = () => {
+  navigator.geolocation.getCurrentPosition(posData => {
+    setTimer(2000).then(data => {  // func with promise
+      console.log(data, posData);
+
+    });
+  }, error => {
+    console.log(error);
+  });
+
+  setTimer(1000).then(() => {
+    console.log('Just practice');
+  }
+  )
+  console.log('Before Geolocation'); // after navigator and geolocation
+
+};
+
+
+
+btn.addEventListener('click', btnClickHandler);
