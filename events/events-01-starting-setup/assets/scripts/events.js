@@ -35,7 +35,7 @@
 const btn = document.querySelector('button');
 
 const setTimer = (duration) => {
-  const promise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {  // promise
     setTimeout(() => {
       resolve('Done!');
     }, duration);
@@ -48,7 +48,6 @@ const btnClickHandler = () => {
   navigator.geolocation.getCurrentPosition(posData => {
     setTimer(2000).then(data => {  // func with promise
       console.log(data, posData);
-
     });
   }, error => {
     console.log(error);
@@ -56,10 +55,9 @@ const btnClickHandler = () => {
 
   setTimer(1000).then(() => {
     console.log('Just practice');
-  }
-  )
-  console.log('Before Geolocation'); // after navigator and geolocation
+  })
 
+  console.log('Before Geolocation'); // after navigator and geolocation
 };
 
 
