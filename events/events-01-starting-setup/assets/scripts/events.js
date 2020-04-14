@@ -32,34 +32,40 @@
 
 
 
+// const btn = document.querySelector('button');
+
+// const setTimer = (duration) => {
+//   const promise = new Promise((resolve, reject) => {  // promise
+//     setTimeout(() => {
+//       resolve('Done!');
+//     }, duration);
+//   })
+//   return promise;
+// }
+
+
+// const btnClickHandler = () => {
+//   navigator.geolocation.getCurrentPosition(posData => {
+//     setTimer(2000).then(data => {  // func with promise
+//       console.log(data, posData);
+//     });
+//   }, error => {
+//     console.log(error);
+//   });
+
+//   setTimer(1000).then(() => {
+//     console.log('Just practice');
+//   })
+
+//   console.log('Before Geolocation'); // after navigator and geolocation
+// };
+
+
 const btn = document.querySelector('button');
 
-const setTimer = (duration) => {
-  const promise = new Promise((resolve, reject) => {  // promise
-    setTimeout(() => {
-      resolve('Done!');
-    }, duration);
-  })
-  return promise;
+
+btn.addEventListener('click', (e) => {
+  console.log(e);
+
 }
-
-
-const btnClickHandler = () => {
-  navigator.geolocation.getCurrentPosition(posData => {
-    setTimer(2000).then(data => {  // func with promise
-      console.log(data, posData);
-    });
-  }, error => {
-    console.log(error);
-  });
-
-  setTimer(1000).then(() => {
-    console.log('Just practice');
-  })
-
-  console.log('Before Geolocation'); // after navigator and geolocation
-};
-
-
-
-btn.addEventListener('click', btnClickHandler);
+)
