@@ -29,7 +29,7 @@ const age = 16;
 //   console.log(`${firstName} is too young for beer`);
 // }
 
-age >= 18 ? console.log(`${firsName} can byu beer`) : console.log(`${firstName} is too young`);  // ternary operators
+// age >= 18 ? console.log(`${firsName} can byu beer`) : console.log(`${firstName} is too young`);  // ternary operators
 
 const john = 'John';
 const scoreJ = 89 + 120 + 103;
@@ -82,4 +82,57 @@ const mark = {
   }
 }
 
-console.log(mark.calcBIM());
+let markCalc = mark.calcBIM();
+
+// console.log(mark.calcBIM());
+
+
+let name = 'John Smith';
+// console.log(name.length);    // length of String
+
+// console.log(name.toUpperCase());  // Convert all to Upper Case letters
+
+//  Includes method
+let test = name.toLowerCase().includes('s');
+//console.log(test);
+name.trim();
+//console.log(name);
+
+
+// Is valid password
+const isValidPassword = (pass) => {
+  if (pass.length > 8 && !pass.includes('password')) {
+    return true
+  } return false;
+}
+
+// console.log(isValidPassword('pass'));
+// console.log(isValidPassword('pass1123144478'));
+// console.log(isValidPassword('password154'));
+
+
+let num = 10.344;
+//console.log(num.toFixed(2));
+
+
+let sNum = num.toString()
+//console.log(typeof (num));
+
+//console.log(typeof (sNum));
+
+let random = Math.random();
+// console.log(random);
+
+
+
+const makeGuess = (num) => {
+  let guessNum = Math.floor(Math.random() * + 5);
+  if (guessNum !== num) {
+    return true;
+  } return false;
+}
+
+// console.log(makeGuess(2));
+
+
+// Playground with arrays
