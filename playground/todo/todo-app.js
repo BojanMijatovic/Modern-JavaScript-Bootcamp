@@ -11,11 +11,22 @@ const todos = [
 ];
 
 const filters = {
-  filteredText: ''
+  filteredText: '',
+  hideCompleted: false
 }
 
 const renderTodos = (todos, filters) => {       // render todos and filters
-  const filteredTodos = todos.filter(todo => todo.text.toLowerCase().includes(filters.filteredText.toLowerCase()));
+  let filteredTodos = todos.filter(todo => todo.text.toLowerCase().includes(filters.filteredText.toLowerCase()));
+
+  filteredTodos = filteredTodos.filter(todo => {
+    return !filters.hideCompleted || !todo.completed  // second solution
+
+    // if (filters.hideCompleted) {
+    //   return !todo.completed
+    // } else {
+    //   return true
+    // }
+  })
 
   document.querySelector('#todos').innerHTML = '' // clean div
 
@@ -47,4 +58,13 @@ formTodo.addEventListener('submit', (e) => {
   todos.push({ 'text': e.target.elements.addTodos.value, 'completed': false })
   renderTodos(todos, filters);
   e.target.elements.addTodos.value = '';
+})
+
+
+//check box 
+const hideCompleted = document.querySelector('#hide');
+hideCompleted.addEventListener('change', (e) => {
+  console.log(e.target.checked);
+  filters.hideCompleted = e.target.checked
+  renderTodos(todos, filters);
 })

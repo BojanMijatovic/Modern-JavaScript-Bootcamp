@@ -50,3 +50,16 @@ searchNote.addEventListener('input', (e) => {
 //   console.log(e.target.elements.firstName.value);
 //   e.target.elements.firstName.value = ''
 // });
+
+//   check box
+// const checkBox = document.querySelector('#test');
+// checkBox.addEventListener('change', (e) => {
+//   console.log(e.target.checked);            // for check box we use  --e.target.checked
+// })
+
+
+// sort by dropdown 
+const dropDown = document.querySelector('#filter-by');
+dropDown.addEventListener('change', (e) => {
+  console.log(e.target.value);                         // for dropdown  we use  --e.target.value
+})
