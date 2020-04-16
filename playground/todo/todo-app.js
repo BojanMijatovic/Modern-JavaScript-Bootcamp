@@ -25,7 +25,6 @@ const renderTodos = (todos, filters) => {       // render todos and filters
     document.querySelector('#todos').append(newTodo);
   })
 
-
   const incompleteTodos = filteredTodos.filter(todo => !todo.completed)                   // return num off incomplete todos
   const summary = document.createElement('h2');
   summary.textContent = `You have more ${incompleteTodos.length} todos to finish`;
@@ -34,13 +33,18 @@ const renderTodos = (todos, filters) => {       // render todos and filters
 
 renderTodos(todos, filters);
 
-//  add todo  btn 
-const addTodo = document.querySelector('#add-todo');
-addTodo.addEventListener('click', () => console.log(`Btn was added`))
-
 //search todo
 const searchTodo = document.querySelector('#search-todo');
 searchTodo.addEventListener('input', (e) => {
   filters.filteredText = e.target.value;
   renderTodos(todos, filters);
 });
+
+//  form
+const formTodo = document.querySelector('#form-todos');
+formTodo.addEventListener('submit', (e) => {
+  e.preventDefault();
+  todos.push({ 'text': e.target.elements.addTodos.value, 'completed': false })
+  renderTodos(todos, filters);
+  e.target.elements.addTodos.value = '';
+})

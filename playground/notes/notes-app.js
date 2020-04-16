@@ -27,9 +27,9 @@ const renderNotes = (notes, filters) => {
 renderNotes(notes, filters);
 
 //  add new element
-const newP = document.createElement('p');  // create new element
-newP.textContent = `New note`;                     // add value to new El
-document.body.append(newP);                     // append element to html
+// const newP = document.createElement('p');  // create new element
+// newP.textContent = `New note`;                     // add value to new El
+// document.body.append(newP);                     // append element to html
 
 //add create note btn
 const addNote = document.querySelector('#create-note');
@@ -41,3 +41,12 @@ searchNote.addEventListener('input', (e) => {
   filters.searchText = e.target.value
   renderNotes(notes, filters)
 })
+
+
+// form 
+// const formId = document.querySelector('#name-form');
+// formId.addEventListener('submit', (e) => {
+//   e.preventDefault();                                  
+//   console.log(e.target.elements.firstName.value);
+//   e.target.elements.firstName.value = ''
+// });
