@@ -20,14 +20,12 @@ const renderTodos = (todos, filters) => {       // render todos and filters
 
   filteredTodos = filteredTodos.filter(todo => {
     return !filters.hideCompleted || !todo.completed  // second solution
-
     // if (filters.hideCompleted) {
     //   return !todo.completed
     // } else {
     //   return true
     // }
   })
-
   document.querySelector('#todos').innerHTML = '' // clean div
 
   filteredTodos.forEach(todo => {
