@@ -26,9 +26,15 @@ renderNotes(notes, filters);
 //add create note btn       -------          addEventListener
 const addNote = document.querySelector('#create-note');
 addNote.addEventListener('click', (e) => {
-  notes.push({ title: '', body: '' })
+  const id = uuidv4();
+  notes.push(
+    {
+      id: id,
+      title: '',
+      body: ''
+    })
   saveNote(notes)
-  renderNotes(notes, filters);
+  location.assign(`edit.html#${id}`);
 })
 
 // search-notes

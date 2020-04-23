@@ -10,10 +10,40 @@ const getSavedTodos = () => {
   }
 }
 
+
+//  Remove todo by id
+const removeTodo = (id) => {
+  const todoIndex = todos.findIndex(todo => todo.id === id)
+  if (todoIndex > -1) {
+    todos.splice(todoIndex, 1)
+  }
+}
+
+
 // generate new todo
 const generateNewTodo = (todo) => {
-  const newTodo = document.createElement('p');     // cerate elements with rendered todos
-  newTodo.textContent = todo.text;
+  const newTodo = document.createElement('div');        // cerate root el with rendered todos
+  const checkTodo = document.createElement('input');
+  const todoText = document.createElement('span');
+  checkTodo.type = 'checkbox';
+
+  checkTodo.checked = todo.completed;
+
+
+  // setup remove btn
+  const removeTodoBtn = document.createElement('button');
+  removeTodoBtn.textContent = 'x';
+  removeTodoBtn.addEventListener('click', (e) => {  // call  function to remove todo
+    removeTodo(todo.id);
+    saveTodo(todos);
+    renderTodos(todos, filters);
+  })
+
+  newTodo.append(checkTodo);
+  todoText.textContent = todo.text;   // add text value 
+  newTodo.append(todoText);
+  newTodo.append(removeTodoBtn);
+
   return newTodo;
 }
 
@@ -32,9 +62,9 @@ const renderTodos = (todos, filters) => {       // render todos and filters
   document.querySelector('#todos').innerHTML = '' // clean div
 
   filteredTodos.forEach(todo => {
-
     document.querySelector('#todos').append(generateNewTodo(todo));
   })
+
   const incompleteTodos = filteredTodos.filter(todo => !todo.completed)                   // return num off incomplete todos
   const summary = document.createElement('h2');
   summary.textContent = `You have more ${incompleteTodos.length} todos to finish`;

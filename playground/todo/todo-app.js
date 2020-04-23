@@ -18,7 +18,11 @@ searchTodo.addEventListener('input', (e) => {
 const formTodo = document.querySelector('#form-todos');
 formTodo.addEventListener('submit', (e) => {
   e.preventDefault();
-  todos.push({ 'text': e.target.elements.addTodos.value, 'completed': false })
+  todos.push({
+    id: uuidv4(),
+    text: e.target.elements.addTodos.value,
+    completed: false
+  })
   saveTodo(todos);
   renderTodos(todos, filters);
   e.target.elements.addTodos.value = '';

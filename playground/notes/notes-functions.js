@@ -1,3 +1,6 @@
+console.log(uuidv4());
+
+
 // read from local storage
 const getSavedNotes = () => {
   const notesJSON = localStorage.getItem('notes');
@@ -8,19 +11,39 @@ const getSavedNotes = () => {
   }
 }
 
+// Remove function
+
+const removeNote = (id) => {
+  const noteIndex = notes.findIndex(note => note.id === id);
+  if (noteIndex > -1) {
+    notes.splice(noteIndex, 1)
+  }
+}
+
 
 //  Generate dom structure for note
 const generateNoteDom = (note) => {
-  const noteEl = document.createElement('p');
+  const noteEl = document.createElement('div');
+  const textEl = document.createElement('a');
   const btn = document.createElement('button');
-  btn.textContent = 'x';
-  if (note.title.length > 0) {
-    noteEl.textContent = note.title;
-  } else {
-    noteEl.textContent = `Unnamed  note`;
-  }
 
+  btn.textContent = 'x';
   noteEl.append(btn);
+
+  // remove Btn 
+  btn.addEventListener('click', () => {
+    removeNote(note.id);
+    saveNote(notes);
+    renderNotes(notes, filters);
+  })
+
+  if (note.title.length > 0) {
+    textEl.textContent = note.title;
+  } else {
+    textEl.textContent = `Unnamed  note`;
+  }
+  textEl.setAttribute(`href`, `edit.html#${note.id}`);
+  noteEl.append(textEl);
   return noteEl;
 }
 
