@@ -1,5 +1,3 @@
-console.log(uuidv4());
-
 
 // read from local storage
 const getSavedNotes = () => {
@@ -12,7 +10,6 @@ const getSavedNotes = () => {
 }
 
 // Remove function
-
 const removeNote = (id) => {
   const noteIndex = notes.findIndex(note => note.id === id);
   if (noteIndex > -1) {
