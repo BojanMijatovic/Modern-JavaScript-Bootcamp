@@ -1,14 +1,16 @@
-const cars = [];
+let cars = [];
 
 // filters
 const filters = {
   searchCar: ''
 }
 
-const addNewCarBtn = document.querySelector('#add-newCar');
 const searchCars = document.querySelector('#search-cars');
-let carList = document.querySelector('.cars');
 
+const carJSON = localStorage.getItem('cars');
+if (carJSON !== null) {
+  cars = JSON.parse(carJSON);
+}
 
 const carForm = document.querySelector('#car-form');
 // form
@@ -22,6 +24,7 @@ carForm.addEventListener('submit', (e) => {
       engine: e.target.elements.addEngine.value,
     })
   }
+  localStorage.setItem('cars', JSON.stringify(cars)) // add to local storage
   renderCars(cars, filters);
   e.target.elements.addModel.value = ''
   e.target.elements.addEngine.value = ''
@@ -30,6 +33,7 @@ carForm.addEventListener('submit', (e) => {
 
 //render cars
 const renderCars = (cars, filters) => {
+  let carList = document.querySelector('.cars');
   const filteredCars = cars.filter(car => car.model.toLowerCase().includes(filters.searchCar.toLowerCase())); // filter cars
 
   //clear list 
@@ -51,4 +55,11 @@ searchCars.addEventListener('input', (e) => {
   renderCars(cars, filters)
 })
 
-
+// remove all cars
+const removeAll = document.querySelector('#removeAll');
+removeAll.addEventListener('click', (e) => {
+  cars.splice(0, cars.length);
+  localStorage.removeItem('cars');
+  renderCars(cars, filters)
+}
+)
