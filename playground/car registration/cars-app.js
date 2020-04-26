@@ -16,10 +16,12 @@ const carForm = document.querySelector('#car-form');
 // form
 carForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  const id = uuidv4(); // add Id to cars
   if (e.target.elements.addModel.value === '' || e.target.elements.addEngine.value === '') {
     return alert('Please insert model and type off engine')
   } else {
     cars.push({
+      id: id,
       model: e.target.elements.addModel.value,
       engine: e.target.elements.addEngine.value,
     })
@@ -39,7 +41,7 @@ const renderCars = (cars, filters) => {
   //clear list 
   carList.innerHTML = ''
 
-  filteredCars.forEach(car => {
+  filteredCars.forEach((car) => {
     const newCar = document.createElement('p');
     newCar.innerHTML = `${car.model.toLowerCase()} with engine ${car.engine.toLowerCase()}`
     carList = document.querySelector('.cars');
