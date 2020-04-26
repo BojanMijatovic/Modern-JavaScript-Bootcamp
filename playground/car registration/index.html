@@ -3,8 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="cars.js"></script>
+    <script src="cars-app.js" defer></script>
     <title>Car Registration</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Welcome to car registration</h1>
+    <label for="search car"
+      >Search cars
+      <input type="text" name="" id="search-cars" placeholder="Search car"
+    /></label>
+    <h2>Form for cars</h2>
+    <form action="" id="car-form">
+      <label for="add car"
+        >Add car :<input
+          type="text"
+          name="addModel"
+          id="addModel"
+          placeholder="form add"
+      /></label>
+      <label for="engine">
+        Add Engine type: <input type="text" name="addEngine" id="addEngine" />
+      </label>
+      <button type="submit">Add Car</button>
+    </form>
+    <div class="cars"></div>
+  </body>
 </html>
