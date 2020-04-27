@@ -17,19 +17,21 @@ const carForm = document.querySelector('#car-form');
 carForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const id = uuidv4(); // add Id to cars
-  if (e.target.elements.addModel.value === '' || e.target.elements.addEngine.value === '') {
-    return alert('Please insert model and type off engine')
+  if (e.target.elements.addModel.value === '' || e.target.elements.addEngine.value === '' || target.elements.carYear.value === '') {
+    return alert('Please insert model and type engine')
   } else {
     cars.push({
       id: id,
       model: e.target.elements.addModel.value,
       engine: e.target.elements.addEngine.value,
+      year: e.target.elements.carYear.value
     })
   }
   saveCars()  // add to local storage
   renderCars(cars, filters);
   e.target.elements.addModel.value = ''
   e.target.elements.addEngine.value = ''
+  e.target.elements.carYear.value = ''
 })
 
 // remove single Car 
@@ -39,7 +41,6 @@ const removeCar = (id) => {
     cars.splice(carIndex, 1)
   }
 }
-
 
 //render cars
 const renderCars = (cars, filters) => {
@@ -52,7 +53,7 @@ const renderCars = (cars, filters) => {
     removeBtn.textContent = 'remove';
     const newCar = document.createElement('div');
 
-    newCar.innerHTML = `${car.model.toLowerCase()} with engine ${car.engine.toLowerCase()}`
+    newCar.innerHTML = `${car.model.toLowerCase()} with engine ${car.engine.toLowerCase()} year off car ${car.year}`
     carList = document.querySelector('.cars');
     carList.append(newCar);
     carList.append(removeBtn);
@@ -63,7 +64,6 @@ const renderCars = (cars, filters) => {
       saveCars()
       renderCars(cars, filters);
     });
-
   })
 }
 
