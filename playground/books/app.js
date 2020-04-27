@@ -18,7 +18,7 @@ const showBook = (books) => {
   const booksList = document.querySelector('.showBooks');
   booksList.innerHTML = ''
   books.forEach(book => {
-    const newBook = document.createElement('p');
+    const newBook = document.createElement('p'); // create new book
     newBook.innerHTML = `${book.nameBook} from author ${book.writer}`
     booksList.append(newBook);
   })
