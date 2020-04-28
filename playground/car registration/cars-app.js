@@ -17,7 +17,7 @@ const carForm = document.querySelector('#car-form');
 carForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const id = uuidv4(); // add Id to cars
-  if (e.target.elements.addModel.value === '' || e.target.elements.addEngine.value === '' || target.elements.carYear.value === '') {
+  if (e.target.elements.addModel.value === '' || e.target.elements.addEngine.value === '' || e.target.elements.carYear.value === '') {
     return alert('Please insert model and type engine')
   } else {
     cars.push({
@@ -51,12 +51,18 @@ const renderCars = (cars, filters) => {
   filteredCars.forEach((car) => {
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'remove';
+
+    // create single car 
     const newCar = document.createElement('div');
 
+    let date = new Date();   // create date  to new car
+    const carDate = document.createElement('p');
+    carDate.textContent = `car was registered ${date.getUTCDate()} ${date.getUTCMonth() + 1} ${date.getUTCFullYear()}`
     newCar.innerHTML = `${car.model.toLowerCase()} with engine ${car.engine.toLowerCase()} year off car ${car.year}`
     carList = document.querySelector('.cars');
     carList.append(newCar);
-    carList.append(removeBtn);
+    newCar.append(carDate);
+    newCar.append(removeBtn);
 
     // remove single item
     removeBtn.addEventListener('click', () => {
@@ -83,8 +89,8 @@ removeAll.addEventListener('click', (e) => {
   renderCars(cars, filters)
 })
 
-
 // save to local storage
 const saveCars = () => {
   return localStorage.setItem('cars', JSON.stringify(cars))
 }
+

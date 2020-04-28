@@ -29,7 +29,6 @@ const generateNewTodo = (todo) => {
 
   checkTodo.checked = todo.completed;
 
-
   // setup remove btn
   const removeTodoBtn = document.createElement('button');
   removeTodoBtn.textContent = 'x';
@@ -38,7 +37,6 @@ const generateNewTodo = (todo) => {
     saveTodo(todos);
     renderTodos(todos, filters);
   })
-
   newTodo.append(checkTodo);
   todoText.textContent = todo.text;   // add text value 
   newTodo.append(todoText);
