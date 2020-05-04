@@ -1,43 +1,15 @@
-const orders = [{
-  food: 'burger',
-  spices: 'chili',
-  amount: 1,
-  completed: false
-},
-{
-  food: 'meat',
-  spices: 'origan',
-  amount: 1,
-  completed: false
-}, {
-  food: 'soup',
-  spices: 'chili',
-  amount: 2,
-  completed: true
-},
-{
-  food: 'pasta',
-  spices: 'cheese',
-  amount: 4,
-  completed: false
-}];
-
+const orders = [];
 
 const filters = {
-  searchText: ''
+  searchText: '',
+  hideCompleted: false
 }
 
 const addOrderBtn = document.querySelector('#addOrder');
 const removeAllBtn = document.querySelector('#removeBtn');
 const orderList = document.querySelector('.orders');
 const searchOrders = document.querySelector('#searchOrders');
-const addFood = document.querySelector('#addFood');
-
-// filter orders left
-const ordersLeft = orders.filter(order => !order.completed);    // return num orders with false completed
-const showLeft = document.createElement('p');
-showLeft.textContent = `You have more ${ordersLeft.length} orders to complete`;
-document.body.append(showLeft)
+const formOrder = document.querySelector('#foodOrder');
 
 
 // show single order
@@ -46,7 +18,6 @@ orders.forEach(order => {
   newOrder.textContent = `${order.food} with ${order.spices} amount ${order.amount}`;
   orderList.append(newOrder);
 })
-
 
 const orderFood = (e) => {
   console.log(e)
@@ -64,17 +35,21 @@ const renderOrders = (orders, filters) => {
   const renderedOrders = orders.filter(order => order.food.toLowerCase().includes(filters.searchText.toLowerCase()))
 
   orderList.innerHTML = ''
+  // filter orders left
+  const ordersLeft = renderedOrders.filter(order => !order.completed);    // return num orders with false completed
+
+  const showLeft = document.createElement('p');
+  showLeft.textContent = `You have more ${ordersLeft.length} orders to complete`;
+  orderList.append(showLeft)
 
   renderedOrders.forEach(order => {
     const newOrder = document.createElement('p');
-    newOrder.textContent = order.food;
+    newOrder.textContent = `${order.food} ${order.amount} meal`;
     orderList.append(newOrder)
   })
-
 }
 
 renderOrders(orders, filters);
-
 
 const addFoodHandler = (e) => {
   const newOrder = document.createElement('p');
@@ -87,8 +62,29 @@ const searchOrdersRender = (e) => {
   renderOrders(orders, filters);
 }
 
+const formOrderHandler = (e) => {
+  e.preventDefault();
+  orders.push({
+    food: e.target.addFood.value,
+    amount: e.target.addAmount.value,
+    completed: false
+  })
+  renderOrders(orders, filters);
+  e.target.addFood.value = '';
+  e.target.addAmount.value = '';
+}
+
+
+
 
 searchOrders.addEventListener('input', searchOrdersRender)
 addOrderBtn.addEventListener('click', orderFood);
 removeAllBtn.addEventListener('click', removeAll);
-addFood.addEventListener('input', addFoodHandler)
+formOrder.addEventListener('submit', formOrderHandler);
+
+document.querySelector('#test').addEventListener('change', (e) => {
+  console.log(e.target.checked);
+  filters.hideCompleted = e.target.checked;
+  renderOrders(orders, filters);
+}
+)
