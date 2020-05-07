@@ -5,16 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
-    <title>playground</title>
+    <title>new playground</title>
   </head>
   <body>
-    <h1>Events and playground</h1>
-    <button id="change-color">Change Title</button>
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-    </ul>
+    <h1>Here is new Playground</h1>
+    <button id="add-note">add Note</button>
+    <div class="note">
+      <label> Note title <input type="text" name="title" id="title" /> </label>
+      <label>
+        Note rating
+        <input
+          type="number"
+          name="priority"
+          id="priority"
+          min="1"
+          max="5"
+          step="1"
+        />
+      </label>
+      <div class="notes__actions">
+        <button class="success">add</button>
+        <button class="cancel">cancel</button>
+      </div>
+    </div>
+    <ul class="notes-list"></ul>
   </body>
 </html>

@@ -1,9 +1,9 @@
-button {
-  color: blue;
-}
+ .note {
+   background-color: cornsilk;
+   align-items: center;
+   display: none;
+ }
 
-
-.test {
-  color: rebeccapurple;
-  background-color: teal;
-}
+ .visible {
+   display: block;
+ }
