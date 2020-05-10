@@ -3,21 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
     <title>Library</title>
   </head>
   <body>
     <h1>Welcome to Library</h1>
-    <form action="" id="formBooks">
-      <input type="text" name="addBook" id="addBook" placeholder="add book" />
-      <input
-        type="text"
-        name="addWriter"
-        id="addWriter"
-        placeholder="add writer"
-      />
-      <button type="submit">add book</button>
-    </form>
-    <div class="booksList"></div>
+    <button id="add-book">add new book</button>
+    <div class="book">
+      <label>
+        Book
+        <input type="text" name="book" id="book" placeholder="book" />
+      </label>
+      <label>
+        Writer
+        <input type="text" name="writer" id="writer" placeholder="writer" />
+      </label>
+      <label>
+        Year Publish <input type="text" name="year" id="year-publish" />
+      </label>
+      <button id="new-book">Add Book</button>
+    </div>
+    <section>
+      <h2>Book List</h2>
+    </section>
+    <div class="book-list"></div>
   </body>
 </html>
