@@ -34,22 +34,26 @@ h1 {
   padding: 0.5rem;
   color: teal;
   background-color: seashell;
-}
-
-#add-book .visible {
   display: block;
 }
 
+
 .book {
+  display: none;
+}
+
+.book-visible {
+  display: block;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .book label {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   padding: 0.5rem;
   color: teal;
+  text-align: center;
 }
 
 .book input {
@@ -73,10 +77,10 @@ h1 {
 
 
 section h2 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: teal;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
