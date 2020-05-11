@@ -4,9 +4,7 @@ const backdrop = document.querySelector('.backdrop');
 const cancelNoteBtn = document.querySelector('.notes__actions .cancel');
 const successAddBtn = document.querySelector('.success');
 const userInputs = note.querySelectorAll('input');
-
 const notes = [];
-
 
 const removeNoteHandler = (noteId) => {
   let notesIndex = 0;
@@ -20,8 +18,6 @@ const removeNoteHandler = (noteId) => {
   const notesList = document.querySelector('.notes-list');
   notesList.children[notesIndex].remove();
 }
-
-
 
 const renderNewNoteElement = (id, noteTitle, priority) => {
   const newNote = document.createElement('li');
@@ -78,7 +74,6 @@ const successAddBtnHandler = () => {
   clearNoteInputs();
   renderNewNoteElement(newNote.id, newNote.title, newNote.priority);   // insert values
   addNoteHandler();
-
 
 }
 

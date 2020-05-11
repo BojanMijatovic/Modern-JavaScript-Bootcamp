@@ -75,6 +75,31 @@ h1 {
   background-color: seashell;
 }
 
+.list {
+  list-style: none;
+  border: solid 1px cadetblue;
+}
+
+.list-title {
+  font-size: 1.6rem;
+  color: teal;
+  display: flex;
+  justify-content: center;
+}
+
+.list-writer {
+  font-size: 1.6rem;
+  color: teal;
+  display: flex;
+  justify-content: center;
+}
+
+.list-year {
+  font-size: 1.6rem;
+  color: teal;
+  display: flex;
+  justify-content: center;
+}
 
 section h2 {
   font-size: 2.2rem;
