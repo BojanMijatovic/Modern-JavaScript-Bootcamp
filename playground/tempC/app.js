@@ -1,15 +1,20 @@
-const tempValue = document.querySelector('#temp').value;
+const tempInCelsius = document.querySelector('#tempC');
+const convertFBtn = document.querySelector('#convertF');
+const resultList = document.querySelector('.show-results');
 
-if (tempValue === '') {
-  alert(`Please insert temperature value`)
+const clearInput = () => {
+  tempInCelsius.value = ''
 }
 
-const convertTemperature = () => {
-  const showConvert = document.createElement('p');
-  const newTemp = (tempValue * 1.8) + 32;
-  showConvert.textContent = `Temp in Fahrenheit is ${newTemp}`;
-  document.querySelector('.result').append(showConvert);
+const convertToFahrenheit = () => {
+  const newTemp = document.createElement('p');
+  newTemp.classList.add('temp');
+  newTemp.innerHTML = `Temp in Fahrenheit is ${(tempInCelsius.value * 1.8) + 32} degreases celsius`;
+  if (tempInCelsius.value === '') {
+    alert('Insert real value')
+  }
+  resultList.append(newTemp);
+  clearInput();
 }
 
-const convertBtn = document.querySelector('button');
-convertBtn.addEventListener('click', convertTemperature)
+convertFBtn.addEventListener('click', convertToFahrenheit);

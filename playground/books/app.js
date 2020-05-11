@@ -1,6 +1,7 @@
 const openBookBtn = document.querySelector('#add-book');
 const book = document.querySelector('.book');
-const addNewBook = document.querySelector('#new-book')
+const addNewBook = document.querySelector('#new-book');
+
 const books = [];
 
 const openBookModal = () => {
@@ -20,8 +21,6 @@ const renderNewBookHandler = (title, writer, year) => {
   `;
   bookList.append(bookElement);
 }
-
-
 
 const addNewBookHandler = () => {
   const bookTitle = document.querySelector('#book');
@@ -48,12 +47,10 @@ const addNewBookHandler = () => {
   }
 
   books.push({ newBook })
-
-  renderNewBookHandler(newBook.title, newBook.writer, newBook.year)
+  renderNewBookHandler(newBook.title, newBook.writer, newBook.year);
   openBookModal();
   clearInput();
 }
-
 
 openBookBtn.addEventListener('click', openBookModal);
 addNewBook.addEventListener('click', addNewBookHandler);

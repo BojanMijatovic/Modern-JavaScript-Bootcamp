@@ -3,18 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
     <title>Temperature converter</title>
   </head>
   <body>
     <h1>Welcome to temperature converter</h1>
-    <label for="temp"
-      >Insert temp in celsius:
-      <input type="text" name="" id="temp" placeholder="insert temperature" />
-    </label>
-    <button>convert</button>
-    <div class="result">
-      <h2>Convert to Fahrenheit</h2>
+    <div class="temp-inputs">
+      <input type="number" name="" id="tempC" placeholder="insert celsius" />
     </div>
+    <button id="convertF">convert to Fahrenheit</button>
+    <ul class="show-results"></ul>
   </body>
 </html>
