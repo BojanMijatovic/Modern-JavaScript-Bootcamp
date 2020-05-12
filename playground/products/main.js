@@ -11,7 +11,7 @@ const products = document.createElement('div');
 products.classList.add('mainApp');
 products.innerHTML = `
   <label class="product">Add new Product:<input type="text" class="add-product__name" /></label>
-    <label class="amount">Add amount off product:<input type="text" class="add-product__amount" /></label>
+    <label class="amount">Add amount off product:<input type="number" class="add-product__amount" /></label>
   <button class="add-btn">add new product</button>
   `;
 app.append(products);
@@ -19,6 +19,29 @@ app.append(products);
 const prodValue = document.querySelector('.add-product__name');
 const prodValueAmount = document.querySelector('.add-product__amount');
 const addNewProductBtn = document.querySelector('.add-btn');
+
+const prodListHandler = (name, amount) => {
+  const prodItemsList = document.createElement('div');
+  prodItemsList.className = 'product-item'
+  prodItemsList.innerHTML = `
+<div>
+<h3 class="product-item__name">Name: ${name}</h3>
+<p class="product-item__amount">Amount: ${amount}</p>
+ 
+</div>
+`;
+
+  products.append(prodItemsList);
+
+  const newStatsHandler = () => {
+    const pay = document.createElement('p');
+    pay.className = 'pay-tax';
+    pay.textContent = `You have to pay ${prodValueAmount.value * 0.25}$ more taxes`
+    prodItemsList.append(pay)
+  }
+
+  newStatsHandler()
+}
 
 
 const addNewProductHandler = () => {
@@ -32,24 +55,14 @@ const addNewProductHandler = () => {
     alert('Insert real values');
   }
   // add to array of products
+  prodListHandler(newProd.name, newProd.amount);
   productList.push({ newProd })
-  prodListHandler(newProd.name, newProd.amount)
+
   console.log(productList);
-}
-
-const prodListHandler = (name, amount) => {
-  const prodItemsList = document.createElement('div');
-  prodItemsList.className = 'product-item'
-  prodItemsList.innerHTML = `
-<div>
-<h3 class="product-item__name">Name: ${name}</h3>
-<p class="product-item__amount">Amount: ${amount}</p>
-<button class="showMark">show mark</button>
-</div>
-`;
-  products.append(prodItemsList);
 
 }
+
+
 
 
 

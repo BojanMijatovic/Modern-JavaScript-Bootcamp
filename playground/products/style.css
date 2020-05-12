@@ -100,3 +100,10 @@ html {
   font-weight: bold;
   border-radius: 0.8rem;
 }
+
+.pay-tax {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 4.5rem 2rem;
+  color: royalblue;
+}
