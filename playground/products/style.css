@@ -6,6 +6,7 @@
 html {
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: seashell;
 }
 
 .mainTitle {
@@ -15,4 +16,87 @@ html {
   text-transform: uppercase;
   text-align: center;
   margin-top: 30px;
+}
+
+.mainApp {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.product {
+  font-size: 1.5rem;
+  color: slateblue;
+  font-weight: bold;
+  margin: 1.4rem;
+}
+
+.add-product__name {
+  font-size: 1.6rem;
+  color: royalblue;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  border: 1px solid bisque;
+}
+
+
+.amount {
+  font-size: 1.5rem;
+  color: slateblue;
+  font-weight: bold;
+  margin: 1.4rem;
+}
+
+.add-product__amount {
+  font-size: 1.6rem;
+  color: royalblue;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  border: 1px solid bisque;
+}
+
+.add-btn {
+  padding: 0.7rem;
+  border: 1px solid black;
+  background-color: royalblue;
+  color: whitesmoke;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.8rem;
+}
+
+
+.product-item {
+  border: 1px solid royalblue;
+  margin: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.product-item__name {
+  font-size: 1.5rem;
+  color: slateblue;
+  font-weight: bold;
+  margin: 1.4rem;
+}
+
+.product-item__amount {
+  font-size: 1.5rem;
+  color: slateblue;
+  font-weight: bold;
+  margin: 1.4rem;
+}
+
+.showMark {
+  padding: 0.7rem;
+  border: 1px solid black;
+  background-color: royalblue;
+  color: whitesmoke;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.8rem;
 }
