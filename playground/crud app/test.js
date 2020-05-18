@@ -6,6 +6,7 @@ const addNotes = (title, completed) => {
 
 addNotes('New', false)
 addNotes('New lessons', true)
+addNotes('html and css', true)
 addNotes('learn js', false)
 addNotes('learn react.js', false)
 // console.log(notes);
@@ -16,7 +17,6 @@ const showAllNotes = (notes) => {
     return console.log(`${id + 1} ${note.title}`);
   })
 }
-// showAllNotes(notes)
 
 // find completed notes
 const findCompletedNotes = (notes) => {
@@ -24,17 +24,14 @@ const findCompletedNotes = (notes) => {
 }
 console.log(findCompletedNotes(notes));
 
-
 //  remove single item
 const removeSingleItem = (notes, noteTitle) => {
-  const notesI = notes.findIndex(note => note.title === noteTitle)
-  return notes.splice(notesI, 1);
+  const noteI = notes.findIndex(note => note.title === noteTitle)
+  return notes.splice(noteI, 1);
 }
 
 removeSingleItem(notes, 'New');
-
 console.log(notes);
-
 
 // filter notes
 const filterByTitle = (notes, filter) => {
@@ -42,5 +39,5 @@ const filterByTitle = (notes, filter) => {
 }
 
 console.log(filterByTitle(notes, 'js'));
-
 showAllNotes(notes)
+
