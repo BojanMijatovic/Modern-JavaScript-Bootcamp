@@ -1,0 +1,7 @@
+ .form label input {
+   background-color: #c2e4babd;
+ }
+
+ .form-invalid {
+   background-color: red;
+ }

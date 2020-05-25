@@ -8,7 +8,6 @@ const addBtn = document.querySelector('button');
 
 const persons = [];
 
-
 const addNewPerson = () => {
   const newPerson = {
     name: name.value,
@@ -31,9 +30,10 @@ const clearInputs = () => {
   phone.value = '';
 }
 
+
 const validateInputs = (person) => {
-  if (person.name.trim() === '' || person.lastName.trim() === '') {
-    alert('Please insert real values');
+  if (person.name.trim() === '' || person.lastName.trim() === '' || person.password.trim() === '' || person.email.trim() === '') {
+    alert('Please insert real values')
     clearInputs();
   } else {
     showPerson(person)
@@ -41,20 +41,23 @@ const validateInputs = (person) => {
   }
 }
 
+const createSear
+
+
 
 const showPerson = (person) => {
   const showList = document.querySelector('.show');
   const list = document.createElement('div');
+  list.classList.add('form');
   list.innerHTML = `
-  <p>${person.name}</p>
-  <p>${person.lastName}</p>
-  <p>${person.password}</p>
-  <p>${person.email}</p>
-  <p>${person.phone}</p>
+  <p>Name: ${person.name}</p>
+  <p>Last name : ${person.lastName}</p>
+  <p>Password :${person.password}</p>
+  <p>Email :${person.email}</p>
+  <p>Phone :${person.phone}</p>
   `;
   showList.append(list);
 }
-
 
 const addItemsHandler = () => {
   addNewPerson();
