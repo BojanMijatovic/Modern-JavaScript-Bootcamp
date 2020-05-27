@@ -16,10 +16,12 @@ const showProducts = (products) => {
   })
 }
 
+
 const findProduct = (products, prodName) => {
   const productIndex = products.filter(prod => prod.name.includes(prodName));
   return console.log(productIndex);
 }
+
 
 const removeProduct = (products, prodName) => {
   const productIndex = products.findIndex(prod => prod.name === prodName);
@@ -39,7 +41,6 @@ const sortProductsByPrice = (products) => {
     }
   })
 }
-
 
 
 addProduct(products, 'beer', 4, 0.2);
