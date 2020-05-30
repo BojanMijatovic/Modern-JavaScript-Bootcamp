@@ -1,31 +1,36 @@
-
 class Product {
-  title = 'default';
-  price;
-  description;
+  //  constructor method
+  constructor(title, price, description) {
+    this.title = title;                                     //properties
+    this.price = price;
+    this.description = description;
+  }
 }
 
+class ProductItem {  //single Item Class
+  constructor(product) {
+    this.product = product;
+  }
 
-console.log(new Product());
 
-const productsList = {
-  products: [
-    {
-      title: 'shoes',
-      price: 144,
-      description: 'new collection'
-    },
-    {
-      title: 't-shirt',
-      price: 87,
-      description: 'summer t-shirt'
-    }
-  ],
-  renderProducts() {
-    this.products.forEach((product, id) => {
-      return console.log(` ${id + 1} ${product.title} ${product.price}$`);
+  renderSingleItem() {
+    return `${this.product.title} ${this.product.price}$ = ${this.product.description}`
+  }
+}
+
+class ProductList {
+  products = [
+    new Product('pants', 77, 'new summer collection'),
+    new Product('t-shirt', 65, 'summer t-shirt')
+  ];
+
+  render() {
+    this.products.forEach((product) => {
+      const singleItem = new ProductItem(product)
+      return console.log(singleItem.renderSingleItem());
     })
   }
 }
 
-// productsList.renderProducts();
+const productList = new ProductList();
+productList.render();
