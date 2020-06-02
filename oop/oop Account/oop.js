@@ -12,7 +12,6 @@ class ProductItem {  //single Item Class
     this.product = product;
   }
 
-
   renderSingleItem() {
     return `${this.product.title} ${this.product.price}$ = ${this.product.description}`
   }
@@ -34,3 +33,5 @@ class ProductList {
 
 const productList = new ProductList();
 productList.render();
+const add = new ProductList();
+
