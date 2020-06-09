@@ -132,6 +132,7 @@ const makeGuess = (num) => {
   } return false;
 }
 
+
 // console.log(makeGuess(2));
 
 

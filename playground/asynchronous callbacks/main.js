@@ -3,7 +3,7 @@
 
 // setTimeout(() => {
 //   console.log(`3 place`);     // 5
-// }, 3000);
+// }, 3000); 
 
 // console.log(`Second place`);  // 2
 // console.log(`Here is new`);   // 3
@@ -25,8 +25,20 @@
 // printName('Alex', 'Bex')
 
 
-const newP = new Promise((resolve, reject) => {
+// const newP = new Promise((resolve, reject) => {
 
-})
+// })
 
-console.log(newP);
+// console.log(newP);
+
+const test = () => {
+  setTimeout(() => {
+    console.log(`test`);
+  }, 0);
+}
+
+console.log('o');
+
+test();
+
+console.log('p');
