@@ -15,8 +15,6 @@ class Patient {
 }
 
 class Hospital {
-
-
   doctors = [
     new Doctor('Mike', 4, 'Epidemiology'),
     new Doctor('Alex', 10, 'Lung Deceases')
