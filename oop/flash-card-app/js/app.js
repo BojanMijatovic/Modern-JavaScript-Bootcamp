@@ -22,6 +22,29 @@ function eventListeners() {
     ui.showQuestion(questionCard);
   });
 
+  closeBtn.addEventListener('click', function () {
+    ui.hideQuestion(questionCard);
+  });
+
+  //add form questions and answers
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const questionValue = questionInput.value;
+    const answerValue = answerInput.value;
+
+    if (questionValue.trim() === '' || answerValue.trim() === '') {
+      feedback.classList.add('showItem', 'alert-danger');
+      feedback.textContent = `Please insert real values`;
+
+      setTimeout(function () {
+        feedback.classList.remove('showItem', 'alert-danger');
+      }, 2000);
+    }
+    else {
+
+    }
+
+  })
 }
 
 // user interface constructor function
@@ -33,10 +56,12 @@ UI.prototype.showQuestion = function (element) {
 }
 
 //hide question card
+UI.prototype.hideQuestion = function (element) {
+  element.classList.remove('showItem');
+}
 
-
-// single question constructor function
-function Question() { }
+//  question constructor function
+function Question(id, title, answer) { }
 
 //dom event
 document.addEventListener('DOMContentLoaded', function () {
