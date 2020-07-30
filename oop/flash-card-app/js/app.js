@@ -55,12 +55,20 @@ function eventListeners() {
 
     //delete question
     if (e.target.classList.contains("delete-flashcard")) {
+      let id = e.target.dataset.id;
       questionList.removeChild(event.target.parentElement.parentElement.parentElement);
+
+      let tempData = data.filter(function (item) {
+        return item.id !== parseInt(id);
+      });
+      data = tempData;
     }
+
     // show hide answer
     else if (e.target.classList.contains("show-answer")) {
       e.target.nextElementSibling.classList.toggle("showItem");
     }
+
     // edit 
     else if (e.target.classList.contains("edit-flashcard")) {
       let id = e.target.dataset.id;
@@ -68,13 +76,12 @@ function eventListeners() {
       questionList.removeChild(event.target.parentElement.parentElement.parentElement);
       // show question card
       ui.showQuestion(questionCard);
-
       const tempQuestion = data.filter(function (question) {
         return question.id === parseInt(id);        // must because dataset returns string ID
       });
-      let tempData = data.filter(function (item) {
-        return item.id !== parseInt(id);
-      })
+
+      questionInput.value = tempQuestion[0].title;
+      answerInput.value = tempQuestion[0].answer;
     }
   });
 };
@@ -118,6 +125,7 @@ UI.prototype.addQuestion = function (element, question) {
                 href="#"
                 id="delete-flashcard"
                 class="btn my-1 delete-flashcard text-uppercase"
+                 data-id="${question.id}"
                 >delete</a>
             </div>
           </div>`;
