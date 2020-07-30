@@ -48,9 +48,36 @@ function eventListeners() {
       ui.addQuestion(questionList, question);
       ui.clearFields(questionInput, answerInput);
     }
+  });
+  // work with questions
+  questionList.addEventListener('click', function (e) {
+    e.preventDefault();
 
-  })
-}
+    //delete question
+    if (e.target.classList.contains("delete-flashcard")) {
+      questionList.removeChild(event.target.parentElement.parentElement.parentElement);
+    }
+    // show hide answer
+    else if (e.target.classList.contains("show-answer")) {
+      e.target.nextElementSibling.classList.toggle("showItem");
+    }
+    // edit 
+    else if (e.target.classList.contains("edit-flashcard")) {
+      let id = e.target.dataset.id;
+      // remove from dom 
+      questionList.removeChild(event.target.parentElement.parentElement.parentElement);
+      // show question card
+      ui.showQuestion(questionCard);
+
+      const tempQuestion = data.filter(function (question) {
+        return question.id === parseInt(id);        // must because dataset returns string ID
+      });
+      let tempData = data.filter(function (item) {
+        return item.id !== parseInt(id);
+      })
+    }
+  });
+};
 
 // user interface constructor function
 function UI() { }
